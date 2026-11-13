@@ -1,0 +1,117 @@
+# Generated from the spec — edit the spec, not this file.
+shots:
+  - id: S01
+    scene: 1
+    durationSec: 1.6
+    type: 3d
+    intent: "Hook: mystery macro, then the crack."
+    description: ECU ring-pull
+    camera:
+      size: ECU
+      angle: eye
+      movement: Slow push-in and drift over the lid, DOF on the tab
+      lens: 85 mm macro feel
+    lighting: "Void stage: only lime (left) and magenta (right) rims skim the
+      aluminium from behind; no key light — the metal is drawn by its edges"
+    build: product block —
+      {"stage":"void","camera":{"from":{"orbit":0.35,"dist":2.2,"height":4.1,"lookY":2.45,"lens":60},"to":{"orbit":0.15,"dist":1.9,"height":3.85,"lookY":2.5,"lens":60
+    reference: storyboard/S01.jpg
+    transitionIn: cut
+    audio: Riser builds, HIT + glitch on the crack
+    asset: Ad-volt (procedural)
+    status: approved
+  - id: S02
+    scene: 2
+    durationSec: 3.2
+    type: shader
+    intent: Through the opening into pure energy — escalation.
+    description: POV forward through a tunnel
+    camera:
+      size: POV
+      angle: eye
+      movement: Accelerating fly-through with increasing twist
+      lens: Wide 24 mm feel
+    lighting: Self-lit voltage rings, core flashes on every kick
+    build: shader block —
+      {"shader":"tunnel","animate":{"uSpeed":[1.6,2.6],"uTwist":[0.5,2]}}
+    reference: storyboard/S02.jpg
+    transitionIn: zoom-through
+    audio: "Drop: kick, bass, 16th hats; tunnel core pulses on kicks"
+    asset: Ad-volt (procedural)
+    status: approved
+  - id: S03
+    scene: 3
+    durationSec: 3.2
+    type: particles
+    intent: "Transformation: a lightning bolt melts and re-forms into the name."
+    description: Wide, particles fill the frame
+    camera:
+      size: Wide,
+      angle: eye
+      movement: Slow orbit around the particle field
+      lens: 40 mm
+    lighting: Additive glow, bloom
+    build: particles block — {"from":{"path":"M118,6 L52,112 L94,112 L74,194 L150,78
+      L106,78
+      Z"},"text":"VOLT","formAt":[1,5.5],"explodeAt":[7,8],"turbulence":1.4,"size":32,"colorA":"#c6ff0
+    reference: storyboard/S03.jpg
+    transitionIn: cut
+    audio: "Build: arps + snare roll + riser into the drop"
+    asset: Ad-volt (procedural)
+    status: approved
+  - id: S04
+    scene: 4
+    durationSec: 3.2
+    type: motion-graphics
+    intent: "Rhythm: claims delivered one per beat."
+    description: Flat graphic frames
+    camera:
+      size: Flat
+      angle: eye
+      movement: Locked; shapes rotate
+      lens: n/a (2D)
+    lighting: Flat neon palette swaps
+    build: montage block — {"words":["Wake","up","loud.","Zero","sugar.","200
+      mg","No","crash."],"beatsPerCut":1,"shapes":["triangle","burst","diamond","star","hexagon","burst","triangle"
+    reference: storyboard/S04.jpg
+    transitionIn: flash
+    audio: "Drop: every cut on a kick"
+    asset: Ad-volt (procedural)
+    status: approved
+  - id: S05
+    scene: 5
+    durationSec: 4.8
+    type: 3d
+    intent: The product lands like a meteor — hero.
+    description: Low-angle hero, MS → MCU
+    camera:
+      size: Low-angle
+      angle: eye
+      movement: Orbit right-to-left while pushing in
+      lens: 35 mm, low and heroic
+    lighting: Lime + magenta rims, white top key, mirrored grid floor
+    build: product block —
+      {"stage":"neon","camera":{"from":{"orbit":0.6,"fill":0.5,"height":0.7,"lookY":1.95,"lens":35},"to":{"orbit":-0.3,"fill":0.6,"height":0.9,"lookY":1.9,"lens":35},
+    reference: storyboard/S05.jpg
+    transitionIn: zoom-through
+    audio: Sub drop + hit on landing; full drop
+    asset: Ad-volt (procedural)
+    status: approved
+  - id: S06
+    scene: 6
+    durationSec: 3.2
+    type: 3d
+    intent: Lockup + button callback.
+    description: Logo over spinning can
+    camera:
+      size: Logo
+      angle: eye
+      movement: Gentle orbit
+      lens: 50 mm
+    lighting: Neon stage
+    build: endcard block — {"logoSize":230,"motion":{"spin":0.5}}
+    reference: storyboard/S06.jpg
+    transitionIn: flash
+    audio: Impact, pad, VO line, final spark hit
+    asset: Ad-volt (procedural)
+    status: approved

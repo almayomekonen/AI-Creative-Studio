@@ -17,6 +17,14 @@ Stack: `three@0.187` + `@react-three/fiber` + `@remotion/three` (`ThreeCanvas`).
 | `ParticleMorph` | see `studio-particles` | |
 Reference use: `remotion/src/reel/Reel.tsx` (SceneProduct, SceneLiquid). Test benches: `remotion/src/three/Lab.tsx` (`Lab-*` compositions).
 
+## Product library & stages (Phase 3)
+- `ProductScene` (`three/ProductScene.tsx`): any product × any stage × keyframed camera (`from`/`to`, `ease`, `lens` mm) × motion (spin, float, drop-in with bounce, tilt) × `dof` (Bokeh, `"auto"` focuses on the camera distance) × bloom.
+- Products (`three/products.tsx`): `flacon` (heavy perfume), `prism` (hex fragrance + iridescent pearl stopper), `can` (330 ml, printed wrap, ring-pull), `jar` (frosted skincare), `watch` (steel case, live Swiss-railway dial drawn per frame). Add one = builder + `PRODUCTS` entry with true `width/height` bounds.
+- Stages: `noir` (glow card + mirror floor), `neon` (coloured rims + glowing grid mirror), `dream` (gradient sky dome, float), `white` (infinity cove + contact shadow), `void` (rims only — best for metal macros).
+- **Aspect-correct framing**: give `fill` instead of `dist` → `fitDistance(w, h, lens, aspect, fill)`; essential for 9:16.
+- Gotchas learned: nested transmission is invisible in three.js (make liquids opaque-glossy inside glass); glass on pale sets needs a sky dome/glow to refract; white/dream stages need lower exposure (`Env exposure`); canvas-texture cylinders: centre the art with `texture.offset.x = 0.5`.
+- Bench: `Lab-Library-9x16` renders every product on its stage.
+
 ## Rules that keep renders correct
 1. **Everything derives from `useCurrentFrame()`** — rotation, camera, uniforms. Never `useFrame` deltas, `Clock`, `Date.now()` or `Math.random()` (use `random(seed)` from remotion).
 2. Set camera every render in a tiny `Rig` component (`camera.position.set(...); camera.lookAt(...)`) — see ProductStage/LiquidChrome.

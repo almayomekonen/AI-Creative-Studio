@@ -1,0 +1,121 @@
+[
+ {
+  "text": " There",
+  "startMs": 3000,
+  "endMs": 3200,
+  "timestampMs": 3000,
+  "confidence": 1.0
+ },
+ {
+  "text": " is",
+  "startMs": 3200,
+  "endMs": 3400,
+  "timestampMs": 3200,
+  "confidence": 1.0
+ },
+ {
+  "text": " a",
+  "startMs": 3400,
+  "endMs": 3500,
+  "timestampMs": 3400,
+  "confidence": 1.0
+ },
+ {
+  "text": " place",
+  "startMs": 3500,
+  "endMs": 3760,
+  "timestampMs": 3500,
+  "confidence": 1.0
+ },
+ {
+  "text": " between",
+  "startMs": 3760,
+  "endMs": 4240,
+  "timestampMs": 3760,
+  "confidence": 1.0
+ },
+ {
+  "text": " waking",
+  "startMs": 4240,
+  "endMs": 4620,
+  "timestampMs": 4240,
+  "confidence": 1.0
+ },
+ {
+  "text": " and",
+  "startMs": 4620,
+  "endMs": 4980,
+  "timestampMs": 4620,
+  "confidence": 1.0
+ },
+ {
+  "text": " dreaming.",
+  "startMs": 4980,
+  "endMs": 5340,
+  "timestampMs": 4980,
+  "confidence": 1.0
+ },
+ {
+  "text": " You",
+  "startMs": 9667,
+  "endMs": 9807,
+  "timestampMs": 9667,
+  "confidence": 1.0
+ },
+ {
+  "text": " can't",
+  "startMs": 9807,
+  "endMs": 10127,
+  "timestampMs": 9807,
+  "confidence": 1.0
+ },
+ {
+  "text": " visit",
+  "startMs": 10127,
+  "endMs": 10347,
+  "timestampMs": 10127,
+  "confidence": 1.0
+ },
+ {
+  "text": " it.",
+  "startMs": 10347,
+  "endMs": 10607,
+  "timestampMs": 10347,
+  "confidence": 1.0
+ },
+ {
+  "text": " But",
+  "startMs": 17667,
+  "endMs": 18047,
+  "timestampMs": 17667,
+  "confidence": 1.0
+ },
+ {
+  "text": " you",
+  "startMs": 18047,
+  "endMs": 18227,
+  "timestampMs": 18047,
+  "confidence": 1.0
+ },
+ {
+  "text": " can",
+  "startMs": 18227,
+  "endMs": 18427,
+  "timestampMs": 18227,
+  "confidence": 1.0
+ },
+ {
+  "text": " wear",
+  "startMs": 18427,
+  "endMs": 18687,
+  "timestampMs": 18427,
+  "confidence": 1.0
+ },
+ {
+  "text": " it.",
+  "startMs": 18687,
+  "endMs": 18967,
+  "timestampMs": 18687,
+  "confidence": 1.0
+ }
+]

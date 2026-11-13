@@ -1,7 +1,7 @@
 import React from "react";
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { ShaderCanvas } from "./ShaderCanvas";
-import { SURREAL_WORLD, LIQUID_GRADIENT } from "./shaders";
+import { SURREAL_WORLD, LIQUID_GRADIENT, SURREAL_DUSK } from "./shaders";
 import { LiquidChrome } from "./LiquidChrome";
 import { AbsoluteFill } from "remotion";
 import { ParticleMorph } from "./ParticleMorph";
@@ -13,7 +13,7 @@ import { anton, inter } from "../lib/fonts";
 // Isolated test benches for each 3D/shader capability (render stills to iterate on looks).
 export const LabSurreal: React.FC = () => {
   const f = useCurrentFrame();
-  return <ShaderCanvas fragment={SURREAL_WORLD} uniforms={{ uDolly: f * 0.05, uRise: 0, uSun: 0.35, uOrb: 0.6 }} />;
+  return <ShaderCanvas fragment={SURREAL_WORLD} uniforms={{ ...(SURREAL_DUSK as unknown as Record<string, [number, number, number]>), uDolly: f * 0.05, uRise: 0, uSun: 0.35, uOrb: 0.6 }} />;
 };
 export const LabLiquid: React.FC = () => {
   const f = useCurrentFrame();

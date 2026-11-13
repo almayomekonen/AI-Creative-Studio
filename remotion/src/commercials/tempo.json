@@ -1,0 +1,412 @@
+{
+  "id": "tempo",
+  "title": "TEMPO \u2014 Every Second Has a Beat",
+  "style": "swiss-precision",
+  "format": "vertical",
+  "fps": 30,
+  "product": "watch",
+  "brand": {
+    "name": "Tempo",
+    "sub": "Swiss movement",
+    "tagline": "Keep your own time.",
+    "cta": "Discover Tempo",
+    "colorA": "#ff3b1f",
+    "colorB": "#ffffff"
+  },
+  "music": {
+    "bpm": 120,
+    "bars": 9,
+    "progression": [
+      [
+        "A2",
+        "minor"
+      ],
+      [
+        "A2",
+        "minor"
+      ],
+      [
+        "F2",
+        "major"
+      ],
+      [
+        "G2",
+        "major"
+      ]
+    ],
+    "sections": [
+      {
+        "name": "tick",
+        "startBar": 0,
+        "bars": 1,
+        "layers": [
+          "tick"
+        ],
+        "energy": 0.3
+      },
+      {
+        "name": "pulse",
+        "startBar": 1,
+        "bars": 1,
+        "layers": [
+          "tick",
+          "kick",
+          "bass"
+        ],
+        "energy": 0.6
+      },
+      {
+        "name": "run",
+        "startBar": 2,
+        "bars": 2,
+        "layers": [
+          "tick",
+          "kick",
+          "bass",
+          "clap",
+          "hats16",
+          "arp"
+        ],
+        "energy": 0.9,
+        "impact": true
+      },
+      {
+        "name": "hero",
+        "startBar": 4,
+        "bars": 2,
+        "layers": [
+          "tick",
+          "kick",
+          "bass",
+          "pad",
+          "clap"
+        ],
+        "energy": 0.8
+      },
+      {
+        "name": "now",
+        "startBar": 6,
+        "bars": 1,
+        "layers": [
+          "pad",
+          "riser@6"
+        ],
+        "energy": 0.4
+      },
+      {
+        "name": "lockup",
+        "startBar": 7,
+        "bars": 2,
+        "layers": [
+          "pad",
+          "tick"
+        ],
+        "energy": 0.3,
+        "impact": true
+      }
+    ]
+  },
+  "voice": "en_US-ryan-medium",
+  "voiceover": [
+    {
+      "id": "vo1",
+      "atBeat": 0.4,
+      "text": "Every second has a beat.",
+      "subtitle": false
+    },
+    {
+      "id": "vo2",
+      "atBeat": 28.4,
+      "text": "Tempo. Keep your own time."
+    }
+  ],
+  "tailFrames": 15,
+  "concept": {
+    "logline": "A watch ad cut entirely to the tick of its own second hand \u2014 the edit is the movement.",
+    "bigIdea": "Count / clock: precision expressed as rhythm. The music is built from ticks; every cut lands on a second.",
+    "hook": "Frame 0: an extreme macro of the red second hand mid-tick, shallow focus, on a white world; VO and type say 'Every second has a beat.' Instantly legible and rhythmic.",
+    "progression": "Escalation of tempo: one tick \u2192 a giant 60 \u2192 a one-word-per-second life montage \u2192 the watch revealed whole \u2192 a sudden black moment where the second hand dissolves into 'Now.' \u2192 lockup on white.",
+    "ending": "Contrast + callback: from the only black scene back to white, the hand keeps ticking under the logo; final tick lands on the last frame.",
+    "audience": "28\u201350, design-literate professionals; watches on mute often \u2014 type carries the message.",
+    "routes": [
+      {
+        "name": "The Edit Is the Movement",
+        "idea": "Cut every shot on the tick; build the score from ticks.",
+        "why": "Product truth (precision) becomes the film's form; very ownable; Swiss grid identity.",
+        "risk": "Could feel cold \u2014 counter with the human montage words and one dramatic black 'Now.' moment."
+      },
+      {
+        "name": "Time Lapse Life",
+        "idea": "A day compressed into 20 s around the wrist.",
+        "why": "Relatable.",
+        "risk": "Needs people/locations \u2014 not producible procedurally. Killed."
+      },
+      {
+        "name": "Swiss Grid Cathedral",
+        "idea": "The watch as architecture; camera flies through the movement.",
+        "why": "Spectacle.",
+        "risk": "Requires an internal mechanism model we don't have yet \u2014 logged for the roadmap."
+      }
+    ],
+    "chosen": "The Edit Is the Movement",
+    "rationale": "Form = message; strongest originality; fully producible; the black 'Now.' contrast beat gives the progression a turn.",
+    "scores": {
+      "hook": 4,
+      "originality": 5,
+      "progression": 4,
+      "transitions": 4,
+      "ending": 4,
+      "producibility": 5
+    }
+  },
+  "scenes": [
+    {
+      "id": "S01",
+      "beats": 4,
+      "block": "product",
+      "props": {
+        "stage": "white",
+        "camera": {
+          "from": {
+            "orbit": 0.0,
+            "dist": 2.2,
+            "height": 1.36,
+            "lookY": 1.32,
+            "lens": 85
+          },
+          "to": {
+            "orbit": 0.08,
+            "dist": 1.9,
+            "height": 1.37,
+            "lookY": 1.33,
+            "lens": 85
+          },
+          "ease": "linear"
+        },
+        "dof": "auto",
+        "bloom": 0
+      },
+      "text": [
+        {
+          "text": "Every second",
+          "preset": "rise",
+          "at": 0,
+          "until": 4,
+          "pos": "top",
+          "size": 96,
+          "color": "#111111"
+        },
+        {
+          "text": "has a beat.",
+          "preset": "rise",
+          "at": 2,
+          "until": 4,
+          "pos": "bottom",
+          "size": 96,
+          "color": "#111111",
+          "emphasize": [
+            "beat."
+          ],
+          "accent": "#ff3b1f"
+        }
+      ],
+      "direction": {
+        "intent": "Hook: the tick, extreme close.",
+        "shot": "ECU dial centre and red hand",
+        "camera": "Imperceptible linear push (a clock doesn't ease)",
+        "lens": "85 mm, shallow DOF",
+        "lighting": "Soft white cyc light, specular on the crystal",
+        "sound": "Ticks only; VO line",
+        "edit": "Opens on a tick; frame 0 shows the red hand"
+      }
+    },
+    {
+      "id": "S02",
+      "beats": 4,
+      "block": "type",
+      "transition": "cut",
+      "props": {
+        "background": "#f2f1ee",
+        "grid": true
+      },
+      "text": [
+        {
+          "text": "60",
+          "preset": "outline",
+          "at": 0,
+          "until": 4,
+          "size": 560,
+          "color": "#111111",
+          "kicker": "beats per minute of your life"
+        }
+      ],
+      "direction": {
+        "intent": "Scale shift: the second becomes typography.",
+        "shot": "Flat Swiss grid",
+        "camera": "Locked",
+        "lens": "n/a",
+        "lighting": "Flat",
+        "sound": "Kick and bass join the tick",
+        "edit": "Hard cut on the downbeat; outline fills on beat 2"
+      }
+    },
+    {
+      "id": "S03",
+      "beats": 8,
+      "block": "montage",
+      "transition": "whip",
+      "props": {
+        "words": [
+          "Wake.",
+          "Run.",
+          "Build.",
+          "Meet.",
+          "Create.",
+          "Rest.",
+          "Repeat.",
+          "Yours."
+        ],
+        "beatsPerCut": 1,
+        "shapes": [
+          "circle",
+          "square",
+          "triangle",
+          "circle",
+          "square",
+          "diamond",
+          "circle",
+          "square",
+          "circle"
+        ],
+        "backgrounds": [
+          "#ff3b1f",
+          "#f2f1ee",
+          "#111111",
+          "#ffffff"
+        ],
+        "size": 200
+      },
+      "direction": {
+        "intent": "A life, one second at a time.",
+        "shot": "Graphic frames",
+        "camera": "Locked, rotating geometry",
+        "lens": "n/a",
+        "lighting": "Flat Swiss palette",
+        "sound": "Full groove; each cut on a beat",
+        "edit": "Whip in, then one cut per beat"
+      }
+    },
+    {
+      "id": "S04",
+      "beats": 8,
+      "block": "product",
+      "transition": "iris",
+      "props": {
+        "stage": "white",
+        "camera": {
+          "from": {
+            "orbit": 0.55,
+            "fill": 0.6,
+            "height": 1.6,
+            "lookY": 2.2,
+            "lens": 50
+          },
+          "to": {
+            "orbit": -0.25,
+            "fill": 0.66,
+            "height": 1.4,
+            "lookY": 2.25,
+            "lens": 50
+          },
+          "ease": "inOut"
+        },
+        "motion": {
+          "spin": 0.0
+        },
+        "dof": "auto",
+        "bloom": 0
+      },
+      "text": [
+        {
+          "text": "Swiss movement\n42 mm steel\nYour tempo.",
+          "preset": "stack",
+          "at": 1,
+          "until": 8,
+          "pos": "top",
+          "size": 70,
+          "color": "#111111",
+          "accent": "#ff3b1f"
+        }
+      ],
+      "direction": {
+        "intent": "Reveal the whole object.",
+        "shot": "MCU hero watch",
+        "camera": "Orbit right-to-left with a slight crane down",
+        "lens": "50 mm",
+        "lighting": "White infinity cove, soft key top-left, contact shadow",
+        "sound": "Groove + pad",
+        "edit": "Iris opens on the downbeat"
+      }
+    },
+    {
+      "id": "S05",
+      "beats": 4,
+      "block": "particles",
+      "transition": "flash",
+      "props": {
+        "from": {
+          "path": "M96,12 L104,12 L104,128 L96,128 Z M100,150 m-14,0 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0"
+        },
+        "text": "Now.",
+        "formAt": [
+          0.2,
+          3
+        ],
+        "turbulence": 1.0,
+        "colorA": "#ff3b1f",
+        "colorB": "#ff8a70",
+        "background": "#0b0b0b",
+        "size": 30
+      },
+      "sfx": [
+        {
+          "name": "shimmer",
+          "atBeat": 2.5,
+          "volume": 0.4
+        }
+      ],
+      "direction": {
+        "intent": "The turn: in a sudden black void, the second hand melts into 'Now.'",
+        "shot": "Wide, particles",
+        "camera": "Slow orbit",
+        "lens": "40 mm",
+        "lighting": "Red glow on black \u2014 the only dark scene",
+        "sound": "Drums drop out; riser",
+        "edit": "Flash cut into black = contrast beat"
+      }
+    },
+    {
+      "id": "S06",
+      "beats": 8,
+      "block": "endcard",
+      "transition": "zoom",
+      "props": {
+        "logoColor": "#111111",
+        "taglineColor": "#111111",
+        "logoSize": 180,
+        "motion": {
+          "spin": 0.0
+        }
+      },
+      "direction": {
+        "intent": "Back to white; the hand keeps ticking under the logo.",
+        "shot": "Hero + lockup",
+        "camera": "Slow orbit",
+        "lens": "50 mm",
+        "lighting": "White cove",
+        "sound": "VO line, ticks and pad, final tick on the last frame",
+        "edit": "Zoom-through out of the black"
+      }
+    }
+  ]
+}

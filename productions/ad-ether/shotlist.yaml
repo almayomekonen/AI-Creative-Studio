@@ -1,0 +1,118 @@
+# Generated from the spec — edit the spec, not this file.
+shots:
+  - id: S01
+    scene: 1
+    durationSec: 2.67
+    type: shader
+    intent: "Hook: calm tactile texture, an invitation."
+    description: Full-frame macro of silk folds
+    camera:
+      size: Full-frame
+      angle: eye
+      movement: Locked; the fabric moves
+      lens: 100 mm macro feel
+    lighting: Soft top-left key, satin sheen
+    build: shader block —
+      {"shader":"silk","c0":"#6d5a8f","c1":"#c8b3ff","c2":"#fff1f6","animate":{"uFlow":[0.8,1.2]}}
+    reference: storyboard/S01.jpg
+    transitionIn: cut
+    audio: Sus2 pad swells in, room-tone air
+    asset: Ad-ether (procedural)
+    status: approved
+  - id: S02
+    scene: 2
+    durationSec: 4
+    type: 3d
+    intent: Meet the object, weightless.
+    description: MS floating bottle
+    camera:
+      size: MS
+      angle: eye
+      movement: Slow orbit with gentle crane up
+      lens: 50 mm
+    lighting: Lavender sky dome, warm key, violet and pink rims
+    build: product block —
+      {"camera":{"from":{"orbit":0.5,"fill":0.62,"height":1.6,"lookY":2.35,"lens":50},"to":{"orbit":-0.1,"fill":0.7,"height":2,"lookY":2.35,"lens":50},"ease":"inOut"}
+    reference: storyboard/S02.jpg
+    transitionIn: match-cut
+    audio: Pad + first VO line
+    asset: Ad-ether (procedural)
+    status: approved
+  - id: S03
+    scene: 3
+    durationSec: 4
+    type: shader
+    intent: "The place: through the glass into an endless dawn."
+    description: EWS colonnade over a mirror sea
+    camera:
+      size: EWS
+      angle: eye
+      movement: Dead-centre dolly down the corridor through every arch
+        (vertical-native framing), sun rising
+      lens: 35 mm
+    lighting: Pastel dawn, low sun behind the arches, mirror reflections
+    build: shader block —
+      {"shader":"surreal","palette":"dawn","animate":{"uDolly":[0,16],"uSun":[0.25,0.45]},"uCamX":0}
+    reference: storyboard/S03.jpg
+    transitionIn: zoom-through
+    audio: Arps enter; VO 'You can't visit it.'
+    asset: Ad-ether (procedural)
+    status: approved
+  - id: S04
+    scene: 4
+    durationSec: 4
+    type: particles
+    intent: "Memory: the bottle dissolves into a constellation that writes the name."
+    description: Wide, particles
+    camera:
+      size: Wide,
+      angle: eye
+      movement: Slow orbit
+      lens: 40 mm
+    lighting: Glowing points on deep violet night
+    build: particles block — {"from":{"path":"M74,196 L126,196 L132,190 L132,82
+      L118,72 L110,66 L110,56 L90,56 L90,66 L82,72 L68,82 L68,190 Z M100,52
+      m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -
+    reference: storyboard/S04.jpg
+    transitionIn: zoom-through
+    audio: Riser + shimmer as the name forms
+    asset: Ad-ether (procedural)
+    status: approved
+  - id: S05
+    scene: 5
+    durationSec: 2.67
+    type: 3d
+    intent: "Detail: the pearl stopper, iridescent."
+    description: CU stopper and shoulders
+    camera:
+      size: CU
+      angle: eye
+      movement: Push-in with drift
+      lens: 85 mm, shallow DOF
+    lighting: Iridescent highlights from the sky dome
+    build: product block —
+      {"camera":{"from":{"orbit":-0.45,"dist":11.5,"height":3.6,"lookY":2.6,"lens":85},"to":{"orbit":-0.2,"dist":9.8,"height":3.4,"lookY":2.7,"lens":85},"ease":"out"}
+    reference: storyboard/S05.jpg
+    transitionIn: match-cut
+    audio: Impact softens into the outro pad
+    asset: Ad-ether (procedural)
+    status: approved
+  - id: S06
+    scene: 6
+    durationSec: 4
+    type: 3d
+    intent: The place becomes the product.
+    description: Hero + lockup
+    camera:
+      size: Hero
+      angle: eye
+      movement: Gentle orbit
+      lens: 50 mm
+    lighting: Dawn sky dome
+    build: endcard block —
+      {"logoColor":"#2b2140","taglineColor":"#2b2140","logoSize":190,"motion":{"spin":0.25,"float":0.1}}
+    reference: storyboard/S06.jpg
+    transitionIn: zoom-through
+    audio: Final VO line; pad resolves
+    asset: Ad-ether (procedural)
+    status: approved

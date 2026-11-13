@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, Audio, Easing, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Caption } from "@remotion/captions";
 import { ShaderCanvas } from "../three/ShaderCanvas";
-import { SURREAL_WORLD, LIQUID_GRADIENT } from "../three/shaders";
+import { SURREAL_WORLD, LIQUID_GRADIENT, SURREAL_DUSK } from "../three/shaders";
 import { LiquidChrome } from "../three/LiquidChrome";
 import { ParticleMorph } from "../three/ParticleMorph";
 import { ProductStage } from "../three/ProductStage";
@@ -71,7 +71,7 @@ const SceneSurreal: React.FC<{ dolly: [number, number]; rise?: [number, number];
   return (
     <ShaderCanvas
       fragment={SURREAL_WORLD}
-      uniforms={{ uDolly: dolly[0] + (dolly[1] - dolly[0]) * p, uRise: rise[0] + (rise[1] - rise[0]) * p, uSun: sun, uOrb: 0.4 + 0.4 * Math.sin(f / 20) }}
+      uniforms={{ ...(SURREAL_DUSK as unknown as Record<string, [number, number, number]>), uDolly: dolly[0] + (dolly[1] - dolly[0]) * p, uRise: rise[0] + (rise[1] - rise[0]) * p, uSun: sun, uOrb: 0.4 + 0.4 * Math.sin(f / 20) }}
     />
   );
 };

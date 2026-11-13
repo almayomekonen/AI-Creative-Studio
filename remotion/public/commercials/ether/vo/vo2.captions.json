@@ -1,0 +1,30 @@
+[
+ {
+  "text": "You",
+  "startMs": 0,
+  "endMs": 140,
+  "timestampMs": 0,
+  "confidence": 0.766
+ },
+ {
+  "text": " can't",
+  "startMs": 140,
+  "endMs": 460,
+  "timestampMs": 140,
+  "confidence": 0.983
+ },
+ {
+  "text": " visit",
+  "startMs": 460,
+  "endMs": 680,
+  "timestampMs": 460,
+  "confidence": 0.988
+ },
+ {
+  "text": " it.",
+  "startMs": 680,
+  "endMs": 940,
+  "timestampMs": 680,
+  "confidence": 0.992
+ }
+]

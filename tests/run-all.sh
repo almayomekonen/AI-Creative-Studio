@@ -20,7 +20,11 @@ t synth-music bash -c "$PY scripts/py/synth.py remotion/src/reel/reel-spec.json 
 t sfx-library bash -c "$PY scripts/py/sfx.py -o $OUT/sfx 2>/dev/null && test \$(ls $OUT/sfx/*.wav | wc -l) -eq 7"
 t piper-tts bash -c "$PY scripts/py/tts.py 'Testing the studio voice.' -o $OUT/tts.wav 2>/dev/null && $PY scripts/py/transcribe.py $OUT/tts.wav -o $OUT/tts --model small --lang en 2>/dev/null && grep -qi 'studio voice' $OUT/tts.txt"
 t align-captions bash -c "$PY -c \"import sys;sys.path.insert(0,'scripts/py');from align_captions import align;w=[{'text':'Alas,','startMs':0,'endMs':300},{'text':' all','startMs':400,'endMs':600},{'text':' simulated.','startMs':650,'endMs':1200}];r=align('Light. Glass. All simulated.',w);assert [x['text'].strip() for x in r]==['Light.','Glass.','All','simulated.'];assert r[-1]['endMs']==1200\""
+t commercial-lint node scripts/pipeline/lint-commercial.mjs all
+t commercial-docs bash -c "node scripts/pipeline/commercial.mjs docs tempo >/dev/null && test -s productions/ad-tempo/06-edit-timeline.md && test -s productions/ad-tempo/shotlist.yaml && node scripts/pipeline/studio.mjs validate ad-tempo >/dev/null 2>&1 || node -e \"const Y=require('yaml');const s=Y.parse(require('fs').readFileSync('productions/ad-tempo/shotlist.yaml','utf8'));if(!s.shots.length)process.exit(1)\""
 if [[ -z "${FAST:-}" ]]; then
+  t still-Lab-Library npx remotion still remotion/src/index.ts Lab-Library-9x16 $OUT/lib.jpg --frame=100 --scale=0.25
+  for ad in volt ether tempo; do t "still-Ad-$ad" npx remotion still remotion/src/index.ts Ad-$ad $OUT/ad-$ad.jpg --frame=200 --scale=0.25; done
   for lab in Lab-Surreal Lab-Liquid Lab-Particles Lab-Product Lab-Morph Lab-Gsap; do t "still-$lab" npx remotion still remotion/src/index.ts $lab $OUT/$lab.jpg --frame=60 --scale=0.25; done
   t render-still npx remotion still remotion/src/index.ts Thumbnail-16x9 $OUT/thumb.png
   t render-showreel node scripts/pipeline/render-remotion.mjs Showreel-9x16 $OUT/showreel.mp4 --props tests/props/showreel.json

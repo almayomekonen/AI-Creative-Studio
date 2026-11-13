@@ -6,6 +6,10 @@ import { KineticText } from "./lib/KineticText";
 import { anton } from "./lib/fonts";
 import { FORMATS, theme } from "./theme";
 import { Reel, REEL_DURATION } from "./reel/Reel";
+import { LabLibrary } from "./three/LabLibrary";
+import { Commercial, calculateCommercialMetadata, commercialDuration } from "./engine/Commercial";
+import { COMMERCIALS } from "./commercials";
+import type { CommercialSpec } from "./engine/types";
 import { LabSurreal, LabLiquid, LabGradient, LabParticles, LabProduct, LabMorph, LabGsap } from "./three/Lab";
 
 const showreelDefaults: ShowreelProps = {
@@ -49,6 +53,20 @@ export const RemotionRoot: React.FC = () => (
     <Folder name="Reel">
       <Composition id="Reel-WrittenInLight" component={Reel} durationInFrames={REEL_DURATION} fps={30} {...FORMATS.landscape} />
     </Folder>
+    <Folder name="Commercials">
+      {COMMERCIALS.map((spec: CommercialSpec) => (
+        <Composition
+          key={spec.id}
+          id={`Ad-${spec.id}`}
+          component={Commercial}
+          fps={spec.fps}
+          {...(spec.format === "vertical" ? FORMATS.vertical : spec.format === "square" ? FORMATS.square : FORMATS.landscape)}
+          durationInFrames={commercialDuration(spec)}
+          defaultProps={{ spec }}
+          calculateMetadata={calculateCommercialMetadata}
+        />
+      ))}
+    </Folder>
     <Folder name="Lab">
       <Composition id="Lab-Surreal" component={LabSurreal} durationInFrames={240} fps={30} {...FORMATS.landscape} />
       <Composition id="Lab-Liquid" component={LabLiquid} durationInFrames={180} fps={30} {...FORMATS.landscape} />
@@ -56,6 +74,7 @@ export const RemotionRoot: React.FC = () => (
       <Composition id="Lab-Particles" component={LabParticles} durationInFrames={150} fps={30} {...FORMATS.landscape} />
       <Composition id="Lab-Product" component={LabProduct} durationInFrames={180} fps={30} {...FORMATS.landscape} />
       <Composition id="Lab-Morph" component={LabMorph} durationInFrames={110} fps={30} {...FORMATS.landscape} />
+      <Composition id="Lab-Library-9x16" component={LabLibrary} durationInFrames={150} fps={30} {...FORMATS.vertical} />
       <Composition id="Lab-Gsap" component={LabGsap} durationInFrames={90} fps={30} {...FORMATS.landscape} />
     </Folder>
     <Still id="Thumbnail-16x9" component={Thumbnail} {...FORMATS.landscape} defaultProps={{ text: "Creative Studio" }} />

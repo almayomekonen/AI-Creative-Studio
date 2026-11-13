@@ -1,0 +1,37 @@
+[
+ {
+  "text": "but",
+  "startMs": 0,
+  "endMs": 380,
+  "timestampMs": 0,
+  "confidence": 0.324
+ },
+ {
+  "text": " you",
+  "startMs": 380,
+  "endMs": 560,
+  "timestampMs": 380,
+  "confidence": 0.988
+ },
+ {
+  "text": " can",
+  "startMs": 560,
+  "endMs": 760,
+  "timestampMs": 560,
+  "confidence": 0.999
+ },
+ {
+  "text": " wear",
+  "startMs": 760,
+  "endMs": 1020,
+  "timestampMs": 760,
+  "confidence": 0.997
+ },
+ {
+  "text": " it",
+  "startMs": 1020,
+  "endMs": 1300,
+  "timestampMs": 1020,
+  "confidence": 0.999
+ }
+]

@@ -1,0 +1,37 @@
+[
+ {
+  "text": "tempo,",
+  "startMs": 0,
+  "endMs": 380,
+  "timestampMs": 0,
+  "confidence": 0.175
+ },
+ {
+  "text": " keep",
+  "startMs": 840,
+  "endMs": 1000,
+  "timestampMs": 840,
+  "confidence": 0.96
+ },
+ {
+  "text": " your",
+  "startMs": 1000,
+  "endMs": 1200,
+  "timestampMs": 1000,
+  "confidence": 0.992
+ },
+ {
+  "text": " own",
+  "startMs": 1200,
+  "endMs": 1460,
+  "timestampMs": 1200,
+  "confidence": 0.98
+ },
+ {
+  "text": " time.",
+  "startMs": 1460,
+  "endMs": 1880,
+  "timestampMs": 1460,
+  "confidence": 0.997
+ }
+]

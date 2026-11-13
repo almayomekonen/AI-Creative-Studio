@@ -2,6 +2,8 @@
 
 A code-driven video production studio built entirely on free & open-source technology: procedural 3D (Three.js), GLSL shader worlds, GPU particles, morphing, kinetic typography (GSAP), procedural music & SFX, local TTS (Piper), Whisper captions, automated QC and delivery. No paid AI generation.
 
+**Commercials (Phase 3):** three original 9:16 ads — VOLT, ÉTHER, TEMPO — produced by the commercial engine from JSON specs, each with a full production package in `productions/ad-<id>/`. See `docs/COMMERCIALS.md`.
+
 **Demo reel:** `remotion/src/reel/Reel.tsx` → `npx remotion render remotion/src/index.ts Reel-WrittenInLight out.mp4` (after `bash scripts/pipeline/build-reel-assets.sh`).
 
 ```
@@ -24,6 +26,8 @@ Then ask Claude: *"run the studio pipeline on productions/<id>"*.
 |---|---|
 | `.claude/skills/` | 9 studio role skills + 6 capability skills + 3 vetted third-party skills |
 | `remotion/src/three/` | Three.js + GLSL: ProductStage, LiquidChrome, ParticleMorph, ShaderCanvas (SURREAL_WORLD, LIQUID_GRADIENT), Bloom, Lab benches |
+| `remotion/src/engine/` | commercial engine: spec → film (blocks, transitions, kinetic type, identities, format/safe zones) |
+| `remotion/src/commercials/` | commercial specs (VOLT, ÉTHER, TEMPO) |
 | `remotion/src/reel/` | "Written in Light" demo reel + its timing/music spec |
 | `remotion/src/lib/` | reusable motion library (camera, parallax, kinetic type, film look, captions, beat sync, transitions) |
 | `remotion/src/compositions/` | `Showreel` (capability demo), `TalkingHead` (short-form edit template) |

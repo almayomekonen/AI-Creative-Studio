@@ -1,0 +1,57 @@
+{
+ "bpm": 90,
+ "bars": 8,
+ "progression": [
+  [
+   "D3",
+   "sus2"
+  ],
+  [
+   "B2",
+   "minor"
+  ],
+  [
+   "G2",
+   "major"
+  ],
+  [
+   "A2",
+   "sus2"
+  ]
+ ],
+ "barsPerChord": 1,
+ "sections": [
+  {
+   "name": "breath",
+   "startBar": 0,
+   "bars": 2,
+   "layers": [
+    "pad"
+   ],
+   "energy": 0.3
+  },
+  {
+   "name": "dream",
+   "startBar": 2,
+   "bars": 4,
+   "layers": [
+    "pad",
+    "arp",
+    "riser@5"
+   ],
+   "energy": 0.5,
+   "impact": true
+  },
+  {
+   "name": "wake",
+   "startBar": 6,
+   "bars": 2,
+   "layers": [
+    "pad",
+    "arp"
+   ],
+   "energy": 0.35,
+   "impact": true
+  }
+ ]
+}

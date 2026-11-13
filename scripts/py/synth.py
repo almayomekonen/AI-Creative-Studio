@@ -7,7 +7,7 @@ Writes the WAV plus `<out>.beats.json` with EXACT beat/downbeat/section/impact t
 so visuals lock to the music perfectly.
 
 Spec keys: bpm, bars, progression [[root, quality]...], barsPerChord, sections[{name,startBar,bars,layers,energy,impact}].
-Layers: pad, kick, bass, hats, hats16, clap, arp, snareroll, riser@<bar> (riser that resolves at the next section).
+Layers: pad, kick, bass, hats, hats16, clap, arp, snareroll, tick, riser@<bar> (riser that resolves at the next section).
 """
 from __future__ import annotations
 
@@ -104,6 +104,16 @@ def pluck(f, dur=0.25):
     # time-varying lowpass approximation: blend of two static filters by envelope
     y = lp(x, 6000) * np.exp(-t * 18) + lp(x, 900) * (1 - np.exp(-t * 18))
     return y * np.exp(-t * 9) * 0.25 * (cutoff > 0)
+
+
+def tick(accent=False):
+    """Mechanical watch tick: two very short resonant clicks (escapement)."""
+    n = int(0.05 * SR)
+    t = np.arange(n) / SR
+    f = 3200 if accent else 2600
+    c1 = np.sin(2 * np.pi * f * t) * np.exp(-t * 900)
+    c2 = np.roll(np.sin(2 * np.pi * (f * 1.5) * t) * np.exp(-t * 1200), int(0.006 * SR)) * 0.5
+    return (c1 + c2) * (0.5 if accent else 0.32)
 
 
 def pad_chord(notes, dur, brightness):
@@ -209,6 +219,9 @@ def render(spec: dict):
                         p = stereo(pluck(hz(seq[(q * 4 + s16) % 4]), beat / 2), -0.4 + 0.8 * (s16 % 2))
                         place(music, p * 0.8, tb + s16 * beat / 4)
                         place(send, p * 0.9, tb + s16 * beat / 4)
+                if "tick" in layers:
+                    place(dry, stereo(tick(accent=(q == 0)), 0.15), tb)
+                    place(dry, stereo(tick() * 0.45, -0.15), tb + beat / 2)
                 if "snareroll" in layers:
                     div = 2 if b == s0 else 4 if q < 2 else 8
                     for k in range(div):

@@ -1,0 +1,72 @@
+[
+ {
+  "text": " Every",
+  "startMs": 200,
+  "endMs": 440,
+  "timestampMs": 200,
+  "confidence": 1.0
+ },
+ {
+  "text": " second",
+  "startMs": 440,
+  "endMs": 840,
+  "timestampMs": 440,
+  "confidence": 1.0
+ },
+ {
+  "text": " has",
+  "startMs": 840,
+  "endMs": 1200,
+  "timestampMs": 840,
+  "confidence": 1.0
+ },
+ {
+  "text": " a",
+  "startMs": 1200,
+  "endMs": 1340,
+  "timestampMs": 1200,
+  "confidence": 1.0
+ },
+ {
+  "text": " beat.",
+  "startMs": 1340,
+  "endMs": 1520,
+  "timestampMs": 1340,
+  "confidence": 1.0
+ },
+ {
+  "text": " Tempo.",
+  "startMs": 14200,
+  "endMs": 14580,
+  "timestampMs": 14200,
+  "confidence": 1.0
+ },
+ {
+  "text": " Keep",
+  "startMs": 15040,
+  "endMs": 15200,
+  "timestampMs": 15040,
+  "confidence": 1.0
+ },
+ {
+  "text": " your",
+  "startMs": 15200,
+  "endMs": 15400,
+  "timestampMs": 15200,
+  "confidence": 1.0
+ },
+ {
+  "text": " own",
+  "startMs": 15400,
+  "endMs": 15660,
+  "timestampMs": 15400,
+  "confidence": 1.0
+ },
+ {
+  "text": " time.",
+  "startMs": 15660,
+  "endMs": 16080,
+  "timestampMs": 15660,
+  "confidence": 1.0
+ }
+]

@@ -1,0 +1,27 @@
+id: ad-volt
+title: VOLT — Crack the Night Open
+created: 2026-11-13
+engine: remotion (commercial engine)
+spec: remotion/src/commercials/volt.json
+composition: Ad-volt
+style: acid-volt
+deliverables:
+  - name: main
+    format: vertical
+    fps: 30
+    durationSec: 19.8
+    qcSpec: social-vertical
+stages:
+  idea: review
+  concept: review
+  script: review
+  storyboard: review
+  shotlist: review
+  assets: review
+  production: review
+  motion: review
+  edit: review
+  sound: review
+  qc: review
+  export: review
+approvals: []

@@ -1,0 +1,484 @@
+{
+  "id": "volt",
+  "title": "VOLT \u2014 Crack the Night Open",
+  "style": "acid-volt",
+  "format": "vertical",
+  "fps": 30,
+  "product": "can",
+  "brand": {
+    "name": "VOLT",
+    "sub": "zero sugar \u00b7 200 mg caffeine",
+    "tagline": "Crack the night open.",
+    "cta": "Out now",
+    "colorA": "#c6ff00",
+    "colorB": "#0a0a0a"
+  },
+  "music": {
+    "bpm": 150,
+    "bars": 12,
+    "progression": [
+      [
+        "E2",
+        "minor"
+      ],
+      [
+        "C2",
+        "major"
+      ],
+      [
+        "G2",
+        "major"
+      ],
+      [
+        "D2",
+        "major"
+      ]
+    ],
+    "sections": [
+      {
+        "name": "hook",
+        "startBar": 0,
+        "bars": 1,
+        "layers": [
+          "pad",
+          "riser@0"
+        ],
+        "energy": 0.3
+      },
+      {
+        "name": "tunnel",
+        "startBar": 1,
+        "bars": 2,
+        "layers": [
+          "kick",
+          "bass",
+          "hats16",
+          "clap",
+          "arp"
+        ],
+        "energy": 0.9,
+        "impact": true
+      },
+      {
+        "name": "build",
+        "startBar": 3,
+        "bars": 2,
+        "layers": [
+          "pad",
+          "arp",
+          "snareroll",
+          "riser@3"
+        ],
+        "energy": 0.6
+      },
+      {
+        "name": "drop",
+        "startBar": 5,
+        "bars": 5,
+        "layers": [
+          "pad",
+          "kick",
+          "bass",
+          "hats16",
+          "clap",
+          "arp"
+        ],
+        "energy": 1.0,
+        "impact": true
+      },
+      {
+        "name": "outro",
+        "startBar": 10,
+        "bars": 2,
+        "layers": [
+          "pad"
+        ],
+        "energy": 0.3,
+        "impact": true
+      }
+    ]
+  },
+  "voice": "en_US-ryan-medium",
+  "voiceover": [
+    {
+      "id": "vo1",
+      "atBeat": 41,
+      "text": "Crack the night open."
+    }
+  ],
+  "tailFrames": 18,
+  "concept": {
+    "logline": "The sound of a can opening is a portal: one crack and the night fills with voltage.",
+    "bigIdea": "Sensory translation \u2014 the CRACK becomes a doorway into pure energy.",
+    "hook": "Extreme macro of the ring-pull in total darkness; on beat 2 the word CRACK. slams with sparks and a flash. Works sound-off (sparks + slam) and sound-on (the crack hit).",
+    "progression": "Journey: through the opening \u2192 a voltage tunnel \u2192 energy condenses from a lightning bolt into the brand name \u2192 rhythm montage \u2192 the can lands like a meteor \u2192 logo.",
+    "ending": "Button: logo lockup, then a final spark burst on the last beat as the VO says the line \u2014 a callback to the opening crack.",
+    "audience": "18\u201330, nightlife, gamers, students; watches with sound on, scrolls fast.",
+    "routes": [
+      {
+        "name": "Crack Portal",
+        "idea": "The ring-pull crack opens a portal into a voltage tunnel; energy assembles the logo.",
+        "why": "Turns the single most recognisable product sound into the whole film; strong hook; showcases portal/particles/neon.",
+        "risk": "Tunnel could read as generic sci-fi \u2014 keep the palette strictly acid lime + magenta and cut on beats."
+      },
+      {
+        "name": "Night Shift Meter",
+        "idea": "A battery meter UI drains as the night goes on; each sip recharges the world.",
+        "why": "Clear benefit story.",
+        "risk": "UI-heavy, looks like an app ad; weaker visual spectacle. Killed."
+      },
+      {
+        "name": "Silent Club",
+        "idea": "A club in total silence until the can opens and sound+light floods back.",
+        "why": "Great contrast idea.",
+        "risk": "Needs people and a real location \u2014 not producible honestly with a procedural stack. Killed."
+      }
+    ],
+    "chosen": "Crack Portal",
+    "rationale": "Highest hook + transition potential, 100% producible, the product truth (the jolt of opening) is the spine of every scene.",
+    "scores": {
+      "hook": 5,
+      "originality": 4,
+      "progression": 4,
+      "transitions": 5,
+      "ending": 4,
+      "producibility": 5
+    }
+  },
+  "scenes": [
+    {
+      "id": "S01",
+      "beats": 4,
+      "block": "product",
+      "props": {
+        "stage": "void",
+        "camera": {
+          "from": {
+            "orbit": 0.35,
+            "dist": 2.2,
+            "height": 4.1,
+            "lookY": 2.45,
+            "lens": 60
+          },
+          "to": {
+            "orbit": 0.15,
+            "dist": 1.9,
+            "height": 3.85,
+            "lookY": 2.5,
+            "lens": 60
+          },
+          "ease": "out"
+        },
+        "motion": {
+          "spin": 0.15
+        },
+        "dof": "auto",
+        "bloom": 0.4
+      },
+      "text": [
+        {
+          "text": "CRACK.",
+          "preset": "slam",
+          "at": 1.5,
+          "pos": "lower",
+          "size": 230
+        }
+      ],
+      "vfx": [
+        {
+          "kind": "sparks",
+          "atBeat": 1.5
+        },
+        {
+          "kind": "flash",
+          "atBeat": 1.5,
+          "color": "#c6ff00"
+        }
+      ],
+      "sfx": [
+        {
+          "name": "hit",
+          "atBeat": 1.5,
+          "volume": 0.8
+        },
+        {
+          "name": "glitch",
+          "atBeat": 1.5,
+          "volume": 0.3
+        }
+      ],
+      "direction": {
+        "intent": "Hook: mystery macro, then the crack.",
+        "shot": "ECU ring-pull",
+        "camera": "Slow push-in and drift over the lid, DOF on the tab",
+        "lens": "85 mm macro feel",
+        "lighting": "Void stage: only lime (left) and magenta (right) rims skim the aluminium from behind; no key light \u2014 the metal is drawn by its edges",
+        "sound": "Riser builds, HIT + glitch on the crack",
+        "edit": "Cut on the crack; frame 0 already shows the glinting lid"
+      }
+    },
+    {
+      "id": "S02",
+      "beats": 8,
+      "block": "shader",
+      "transition": "portal",
+      "props": {
+        "shader": "tunnel",
+        "animate": {
+          "uSpeed": [
+            1.6,
+            2.6
+          ],
+          "uTwist": [
+            0.5,
+            2.0
+          ]
+        }
+      },
+      "text": [
+        {
+          "text": "Zero\nsugar.",
+          "preset": "glitch",
+          "at": 1,
+          "until": 4,
+          "size": 170
+        },
+        {
+          "text": "Full\nvoltage.",
+          "preset": "slam",
+          "at": 4.5,
+          "until": 8,
+          "size": 180,
+          "emphasize": [
+            "voltage."
+          ]
+        }
+      ],
+      "direction": {
+        "intent": "Through the opening into pure energy \u2014 escalation.",
+        "shot": "POV forward through a tunnel",
+        "camera": "Accelerating fly-through with increasing twist",
+        "lens": "Wide 24 mm feel",
+        "lighting": "Self-lit voltage rings, core flashes on every kick",
+        "sound": "Drop: kick, bass, 16th hats; tunnel core pulses on kicks",
+        "edit": "Portal iris opens out of the can's dark lid"
+      }
+    },
+    {
+      "id": "S03",
+      "beats": 8,
+      "block": "particles",
+      "transition": "glitch",
+      "props": {
+        "from": {
+          "path": "M118,6 L52,112 L94,112 L74,194 L150,78 L106,78 Z"
+        },
+        "text": "VOLT",
+        "formAt": [
+          1,
+          5.5
+        ],
+        "explodeAt": [
+          7.0,
+          8.0
+        ],
+        "turbulence": 1.4,
+        "size": 32,
+        "colorA": "#c6ff00",
+        "colorB": "#f4ffd0"
+      },
+      "text": [
+        {
+          "text": "Bottled lightning",
+          "preset": "track",
+          "at": 2,
+          "until": 7,
+          "pos": "lower",
+          "size": 58,
+          "font": "body"
+        }
+      ],
+      "sfx": [
+        {
+          "name": "shimmer",
+          "atBeat": 5,
+          "volume": 0.5
+        },
+        {
+          "name": "sub_drop",
+          "atBeat": 7.0,
+          "volume": 0.7
+        }
+      ],
+      "direction": {
+        "intent": "Transformation: a lightning bolt melts and re-forms into the name.",
+        "shot": "Wide, particles fill the frame",
+        "camera": "Slow orbit around the particle field",
+        "lens": "40 mm",
+        "lighting": "Additive glow, bloom",
+        "sound": "Build: arps + snare roll + riser into the drop",
+        "edit": "Glitch cut in; the name detonates on beat 7 (flash + shockwave + burst) and the montage cuts in on the drop"
+      },
+      "vfx": [
+        {
+          "kind": "flash",
+          "atBeat": 7.0,
+          "color": "#c6ff00"
+        },
+        {
+          "kind": "shockwave",
+          "atBeat": 7.0
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "beats": 8,
+      "block": "montage",
+      "transition": "flash",
+      "props": {
+        "words": [
+          "Wake",
+          "up",
+          "loud.",
+          "Zero",
+          "sugar.",
+          "200 mg",
+          "No",
+          "crash."
+        ],
+        "beatsPerCut": 1,
+        "shapes": [
+          "triangle",
+          "burst",
+          "diamond",
+          "star",
+          "hexagon",
+          "burst",
+          "triangle",
+          "star",
+          "burst"
+        ],
+        "size": 210
+      },
+      "direction": {
+        "intent": "Rhythm: claims delivered one per beat.",
+        "shot": "Flat graphic frames",
+        "camera": "Locked; shapes rotate",
+        "lens": "n/a (2D)",
+        "lighting": "Flat neon palette swaps",
+        "sound": "Drop: every cut on a kick",
+        "edit": "Hard cut every beat (12 frames), velocity kept by rotating shape"
+      }
+    },
+    {
+      "id": "S05",
+      "beats": 12,
+      "block": "product",
+      "transition": "zoom",
+      "props": {
+        "stage": "neon",
+        "camera": {
+          "from": {
+            "orbit": 0.6,
+            "fill": 0.5,
+            "height": 0.7,
+            "lookY": 1.95,
+            "lens": 35
+          },
+          "to": {
+            "orbit": -0.3,
+            "fill": 0.6,
+            "height": 0.9,
+            "lookY": 1.9,
+            "lens": 35
+          },
+          "ease": "inOut"
+        },
+        "motion": {
+          "spin": 1.1,
+          "drop": 6,
+          "dropFrames": 14
+        },
+        "bloom": 0.32
+      },
+      "text": [
+        {
+          "text": "Zero sugar\n200 mg caffeine\nPure voltage",
+          "preset": "stack",
+          "at": 4,
+          "until": 12,
+          "pos": "top",
+          "size": 70,
+          "font": "display"
+        }
+      ],
+      "vfx": [
+        {
+          "kind": "shockwave",
+          "atBeat": 1.15
+        },
+        {
+          "kind": "sparks",
+          "atBeat": 1.15,
+          "color": "#ff2bd6"
+        }
+      ],
+      "sfx": [
+        {
+          "name": "sub_drop",
+          "atBeat": 1.1,
+          "volume": 0.8
+        },
+        {
+          "name": "hit",
+          "atBeat": 1.15,
+          "volume": 0.6
+        }
+      ],
+      "direction": {
+        "intent": "The product lands like a meteor \u2014 hero.",
+        "shot": "Low-angle hero, MS \u2192 MCU",
+        "camera": "Orbit right-to-left while pushing in",
+        "lens": "35 mm, low and heroic",
+        "lighting": "Lime + magenta rims, white top key, mirrored grid floor",
+        "sound": "Sub drop + hit on landing; full drop",
+        "edit": "Zoom-through in, the can falls into frame on beat 1"
+      }
+    },
+    {
+      "id": "S06",
+      "beats": 8,
+      "block": "endcard",
+      "transition": "flash",
+      "props": {
+        "logoSize": 230,
+        "motion": {
+          "spin": 0.5
+        }
+      },
+      "vfx": [
+        {
+          "kind": "sparks",
+          "atBeat": 6.5
+        }
+      ],
+      "sfx": [
+        {
+          "name": "hit",
+          "atBeat": 6.5,
+          "volume": 0.7
+        }
+      ],
+      "direction": {
+        "intent": "Lockup + button callback.",
+        "shot": "Logo over spinning can",
+        "camera": "Gentle orbit",
+        "lens": "50 mm",
+        "lighting": "Neon stage",
+        "sound": "Impact, pad, VO line, final spark hit",
+        "edit": "Flash cut; hold logo \u2265 2 s; final spark on the last beat"
+      }
+    }
+  ]
+}

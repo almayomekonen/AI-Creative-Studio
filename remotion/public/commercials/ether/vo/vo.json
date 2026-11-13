@@ -1,0 +1,23 @@
+[
+ {
+  "id": "vo1",
+  "file": "vo1.wav",
+  "atSec": 3,
+  "durationSec": 2.763,
+  "text": "There is a place between waking and dreaming."
+ },
+ {
+  "id": "vo2",
+  "file": "vo2.wav",
+  "atSec": 9.667,
+  "durationSec": 1.231,
+  "text": "You can't visit it."
+ },
+ {
+  "id": "vo3",
+  "file": "vo3.wav",
+  "atSec": 17.667,
+  "durationSec": 1.533,
+  "text": "But you can wear it."
+ }
+]

@@ -1,0 +1,16 @@
+[
+ {
+  "id": "vo1",
+  "file": "vo1.wav",
+  "atSec": 0.2,
+  "durationSec": 1.533,
+  "text": "Every second has a beat."
+ },
+ {
+  "id": "vo2",
+  "file": "vo2.wav",
+  "atSec": 14.2,
+  "durationSec": 2.084,
+  "text": "Tempo. Keep your own time."
+ }
+]

@@ -1,0 +1,116 @@
+# Generated from the spec — edit the spec, not this file.
+shots:
+  - id: S01
+    scene: 1
+    durationSec: 2
+    type: 3d
+    intent: "Hook: the tick, extreme close."
+    description: ECU dial centre and red hand
+    camera:
+      size: ECU
+      angle: eye
+      movement: Imperceptible linear push (a clock doesn't ease)
+      lens: 85 mm, shallow DOF
+    lighting: Soft white cyc light, specular on the crystal
+    build: product block —
+      {"stage":"white","camera":{"from":{"orbit":0,"dist":2.2,"height":1.36,"lookY":1.32,"lens":85},"to":{"orbit":0.08,"dist":1.9,"height":1.37,"lookY":1.33,"lens":85
+    reference: storyboard/S01.jpg
+    transitionIn: cut
+    audio: Ticks only; VO line
+    asset: Ad-tempo (procedural)
+    status: approved
+  - id: S02
+    scene: 2
+    durationSec: 2
+    type: typography
+    intent: "Scale shift: the second becomes typography."
+    description: Flat Swiss grid
+    camera:
+      size: Flat
+      angle: eye
+      movement: Locked
+      lens: n/a
+    lighting: Flat
+    build: type block — {"background":"#f2f1ee","grid":true}
+    reference: storyboard/S02.jpg
+    transitionIn: cut
+    audio: Kick and bass join the tick
+    asset: Ad-tempo (procedural)
+    status: approved
+  - id: S03
+    scene: 3
+    durationSec: 4
+    type: motion-graphics
+    intent: A life, one second at a time.
+    description: Graphic frames
+    camera:
+      size: Graphic
+      angle: eye
+      movement: Locked, rotating geometry
+      lens: n/a
+    lighting: Flat Swiss palette
+    build: montage block —
+      {"words":["Wake.","Run.","Build.","Meet.","Create.","Rest.","Repeat.","Yours."],"beatsPerCut":1,"shapes":["circle","square","triangle","circle","square","diamon
+    reference: storyboard/S03.jpg
+    transitionIn: whip
+    audio: Full groove; each cut on a beat
+    asset: Ad-tempo (procedural)
+    status: approved
+  - id: S04
+    scene: 4
+    durationSec: 4
+    type: 3d
+    intent: Reveal the whole object.
+    description: MCU hero watch
+    camera:
+      size: MCU
+      angle: eye
+      movement: Orbit right-to-left with a slight crane down
+      lens: 50 mm
+    lighting: White infinity cove, soft key top-left, contact shadow
+    build: 'product block —
+      {"stage":"white","camera":{"from":{"orbit":0.55,"fill":0.6,"height":1.6,"lookY":2.2,"lens":50},"to":{"orbit":-0.25,"fill":0.66,"height":1.4,"lookY":2.25,"lens":'
+    reference: storyboard/S04.jpg
+    transitionIn: match-cut
+    audio: Groove + pad
+    asset: Ad-tempo (procedural)
+    status: approved
+  - id: S05
+    scene: 5
+    durationSec: 2
+    type: particles
+    intent: "The turn: in a sudden black void, the second hand melts into 'Now.'"
+    description: Wide, particles
+    camera:
+      size: Wide,
+      angle: eye
+      movement: Slow orbit
+      lens: 40 mm
+    lighting: Red glow on black — the only dark scene
+    build: particles block — {"from":{"path":"M96,12 L104,12 L104,128 L96,128 Z
+      M100,150 m-14,0 a14,14 0 1,0 28,0 a14,14 0 1,0
+      -28,0"},"text":"Now.","formAt":[0.2,3],"turbulence":1,"colorA"
+    reference: storyboard/S05.jpg
+    transitionIn: flash
+    audio: Drums drop out; riser
+    asset: Ad-tempo (procedural)
+    status: approved
+  - id: S06
+    scene: 6
+    durationSec: 4
+    type: 3d
+    intent: Back to white; the hand keeps ticking under the logo.
+    description: Hero + lockup
+    camera:
+      size: Hero
+      angle: eye
+      movement: Slow orbit
+      lens: 50 mm
+    lighting: White cove
+    build: endcard block —
+      {"logoColor":"#111111","taglineColor":"#111111","logoSize":180,"motion":{"spin":0}}
+    reference: storyboard/S06.jpg
+    transitionIn: zoom-through
+    audio: VO line, ticks and pad, final tick on the last frame
+    asset: Ad-tempo (procedural)
+    status: approved

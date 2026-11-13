@@ -1,0 +1,86 @@
+{
+ "bpm": 150,
+ "bars": 12,
+ "progression": [
+  [
+   "E2",
+   "minor"
+  ],
+  [
+   "C2",
+   "major"
+  ],
+  [
+   "G2",
+   "major"
+  ],
+  [
+   "D2",
+   "major"
+  ]
+ ],
+ "barsPerChord": 1,
+ "sections": [
+  {
+   "name": "hook",
+   "startBar": 0,
+   "bars": 1,
+   "layers": [
+    "pad",
+    "riser@0"
+   ],
+   "energy": 0.3
+  },
+  {
+   "name": "tunnel",
+   "startBar": 1,
+   "bars": 2,
+   "layers": [
+    "kick",
+    "bass",
+    "hats16",
+    "clap",
+    "arp"
+   ],
+   "energy": 0.9,
+   "impact": true
+  },
+  {
+   "name": "build",
+   "startBar": 3,
+   "bars": 2,
+   "layers": [
+    "pad",
+    "arp",
+    "snareroll",
+    "riser@3"
+   ],
+   "energy": 0.6
+  },
+  {
+   "name": "drop",
+   "startBar": 5,
+   "bars": 5,
+   "layers": [
+    "pad",
+    "kick",
+    "bass",
+    "hats16",
+    "clap",
+    "arp"
+   ],
+   "energy": 1,
+   "impact": true
+  },
+  {
+   "name": "outro",
+   "startBar": 10,
+   "bars": 2,
+   "layers": [
+    "pad"
+   ],
+   "energy": 0.3,
+   "impact": true
+  }
+ ]
+}

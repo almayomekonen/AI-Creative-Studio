@@ -7,6 +7,7 @@ Independent professional AI video production studio. **Unrelated to any other pr
   `studio-creative-director`, `studio-film-director`, `studio-storyboard-artist`, `studio-cinematographer`, `studio-motion-designer`, `studio-video-editor`, `studio-sound-designer`, `studio-quality-control`.
 - Capability skills (procedural, all verified): `studio-3d-threejs`, `studio-glsl-shaders`, `studio-particles`, `studio-morph-transitions`, `studio-kinetic-typography`, `studio-procedural-audio`.
 - Vetted third-party skills: `cinematic-director` (film language), `remotion-best-practices`, `ffmpeg-skill`. HyperFrames skills are global.
+- **Commercials (Phase 3):** `studio-concept-engine` (ideas) → `studio-commercial` (spec → film + all production docs). Also `studio-visual-identities`, `studio-vfx`. Engine in `remotion/src/engine/`, specs in `remotion/src/commercials/*.json`, pipeline `node scripts/pipeline/commercial.mjs <assets|docs|storyboard|render|all> <id>`, outputs in `productions/ad-<id>/`.
 - Reference production: `remotion/src/reel/Reel.tsx` — "Written in Light" demo reel (assets: `bash scripts/pipeline/build-reel-assets.sh`).
 - Productions live in `productions/<date-slug>/` — `npm run new -- "Title"`, `npm run status`, `npm run validate -- <id>`.
 

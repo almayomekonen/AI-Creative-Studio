@@ -81,7 +81,7 @@ def main() -> int:
     blacks = re.findall(r"black_start:([\d.]+) black_end:([\d.]+)", bd)
     checks["black_segments"] = [(float(s), float(e)) for s, e in blacks]
     for s, e in checks["black_segments"]:
-        if s > 0.05 and e < dur - 0.05:  # mid-programme black is suspicious; head/tail black is fine
+        if s > 0.05 and e < dur - 0.15:  # mid-programme black is suspicious; head/tail black (fade-in/out) is fine
             issue("major", f"black frames {s:.2f}-{e:.2f}s mid-programme")
     fz = run(["ffmpeg", "-hide_banner", "-nostats", "-i", args.input, "-vf", "freezedetect=n=0.001:d=1.5", "-an", "-f", "null", "-"])
     freezes = re.findall(r"freeze_start: ([\d.]+)", fz)

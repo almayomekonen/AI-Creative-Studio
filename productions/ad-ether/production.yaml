@@ -1,0 +1,27 @@
+id: ad-ether
+title: ÉTHER — Wear the Dream
+created: 2026-11-13
+engine: remotion (commercial engine)
+spec: remotion/src/commercials/ether.json
+composition: Ad-ether
+style: ethereal-dawn
+deliverables:
+  - name: main
+    format: vertical
+    fps: 30
+    durationSec: 22
+    qcSpec: social-vertical
+stages:
+  idea: review
+  concept: review
+  script: review
+  storyboard: review
+  shotlist: review
+  assets: review
+  production: review
+  motion: review
+  edit: review
+  sound: review
+  qc: review
+  export: review
+approvals: []

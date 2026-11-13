@@ -1,0 +1,362 @@
+{
+  "id": "ether",
+  "title": "\u00c9THER \u2014 Wear the Dream",
+  "style": "ethereal-dawn",
+  "format": "vertical",
+  "fps": 30,
+  "product": "prism",
+  "brand": {
+    "name": "\u00c9ther",
+    "sub": "eau de parfum",
+    "tagline": "Wear the dream.",
+    "cta": "Discover \u00c9ther",
+    "colorA": "#9b6bff",
+    "colorB": "#e6d8ff"
+  },
+  "music": {
+    "bpm": 90,
+    "bars": 8,
+    "progression": [
+      [
+        "D3",
+        "sus2"
+      ],
+      [
+        "B2",
+        "minor"
+      ],
+      [
+        "G2",
+        "major"
+      ],
+      [
+        "A2",
+        "sus2"
+      ]
+    ],
+    "sections": [
+      {
+        "name": "breath",
+        "startBar": 0,
+        "bars": 2,
+        "layers": [
+          "pad"
+        ],
+        "energy": 0.3
+      },
+      {
+        "name": "dream",
+        "startBar": 2,
+        "bars": 4,
+        "layers": [
+          "pad",
+          "arp",
+          "riser@5"
+        ],
+        "energy": 0.5,
+        "impact": true
+      },
+      {
+        "name": "wake",
+        "startBar": 6,
+        "bars": 2,
+        "layers": [
+          "pad",
+          "arp"
+        ],
+        "energy": 0.35,
+        "impact": true
+      }
+    ]
+  },
+  "voice": "en_US-lessac-medium",
+  "voiceover": [
+    {
+      "id": "vo1",
+      "atBeat": 4.5,
+      "text": "There is a place between waking and dreaming."
+    },
+    {
+      "id": "vo2",
+      "atBeat": 14.5,
+      "text": "You can't visit it."
+    },
+    {
+      "id": "vo3",
+      "atBeat": 26.5,
+      "text": "But you can wear it."
+    }
+  ],
+  "tailFrames": 20,
+  "concept": {
+    "logline": "A fragrance is a place you can't visit \u2014 so we built the place, and put it in a bottle.",
+    "bigIdea": "Portal / journey: through the glass into a pastel dreamworld, and the dream condenses back into the name.",
+    "hook": "Frame 0: lavender silk in slow motion, a single soft-focus line 'Breathe in.' \u2014 tactile, calm, scroll-stopping because it's the opposite of everything loud around it.",
+    "progression": "Journey: silk (touch) \u2192 the floating bottle (object) \u2192 through the glass into an endless dawn colonnade (place) \u2192 the bottle dissolves into a constellation that becomes the name (memory) \u2192 macro on the pearl stopper \u2192 lockup.",
+    "ending": "Callback + reveal: the world returns into the bottle; VO 'But you can wear it.' lands as the lockup resolves \u2014 the place becomes the product.",
+    "audience": "25\u201345, beauty & fragrance buyers; sound-on Reels/TikTok; responds to mood and craft.",
+    "routes": [
+      {
+        "name": "The Place in the Bottle",
+        "idea": "Travel through the glass into a dreamworld, then return.",
+        "why": "Makes the abstract (scent) spatial; perfect for portal + surreal world + particle reassembly.",
+        "risk": "Dream ads are a genre \u2014 avoid clich\u00e9s by keeping it architectural (colonnade, mirror sea) rather than flowers and clouds."
+      },
+      {
+        "name": "Silk Weather",
+        "idea": "Weather made of fabric \u2014 silk rain, satin fog.",
+        "why": "Beautiful textures.",
+        "risk": "Hard to tie to a product truth; mostly mood. Killed."
+      },
+      {
+        "name": "Breath Counter",
+        "idea": "One breath in = one scene; out = transition.",
+        "why": "Strong rhythm device.",
+        "risk": "Too cerebral for 20 s; folded into the hook line instead."
+      }
+    ],
+    "chosen": "The Place in the Bottle",
+    "rationale": "Strongest progression (touch \u2192 object \u2192 place \u2192 memory \u2192 product) with two unexpected transitions (through-the-glass portal, bottle-silhouette particle dissolve).",
+    "scores": {
+      "hook": 4,
+      "originality": 4,
+      "progression": 5,
+      "transitions": 5,
+      "ending": 4,
+      "producibility": 5
+    }
+  },
+  "scenes": [
+    {
+      "id": "S01",
+      "beats": 4,
+      "block": "shader",
+      "props": {
+        "shader": "silk",
+        "c0": "#6d5a8f",
+        "c1": "#c8b3ff",
+        "c2": "#fff1f6",
+        "animate": {
+          "uFlow": [
+            0.8,
+            1.2
+          ]
+        }
+      },
+      "text": [
+        {
+          "text": "Breathe in.",
+          "preset": "blur",
+          "at": 0.5,
+          "until": 4,
+          "pos": "center",
+          "size": 130,
+          "font": "serif",
+          "color": "#2b2140"
+        }
+      ],
+      "direction": {
+        "intent": "Hook: calm tactile texture, an invitation.",
+        "shot": "Full-frame macro of silk folds",
+        "camera": "Locked; the fabric moves",
+        "lens": "100 mm macro feel",
+        "lighting": "Soft top-left key, satin sheen",
+        "sound": "Sus2 pad swells in, room-tone air",
+        "edit": "Opens already moving \u2014 no fade from black"
+      }
+    },
+    {
+      "id": "S02",
+      "beats": 6,
+      "block": "product",
+      "transition": "iris",
+      "props": {
+        "camera": {
+          "from": {
+            "orbit": 0.5,
+            "fill": 0.62,
+            "height": 1.6,
+            "lookY": 2.35,
+            "lens": 50
+          },
+          "to": {
+            "orbit": -0.1,
+            "fill": 0.7,
+            "height": 2.0,
+            "lookY": 2.35,
+            "lens": 50
+          },
+          "ease": "inOut"
+        },
+        "motion": {
+          "spin": 0.25,
+          "float": 0.12
+        },
+        "dof": "auto"
+      },
+      "text": [
+        {
+          "text": "\u00c9ther",
+          "preset": "track",
+          "at": 2,
+          "until": 6,
+          "pos": "upper",
+          "size": 110,
+          "font": "serif",
+          "color": "#2b2140"
+        }
+      ],
+      "direction": {
+        "intent": "Meet the object, weightless.",
+        "shot": "MS floating bottle",
+        "camera": "Slow orbit with gentle crane up",
+        "lens": "50 mm",
+        "lighting": "Lavender sky dome, warm key, violet and pink rims",
+        "sound": "Pad + first VO line",
+        "edit": "Star-iris morph opens out of the silk"
+      }
+    },
+    {
+      "id": "S03",
+      "beats": 6,
+      "block": "shader",
+      "transition": "portal",
+      "props": {
+        "shader": "surreal",
+        "palette": "dawn",
+        "animate": {
+          "uDolly": [
+            0,
+            16
+          ],
+          "uSun": [
+            0.25,
+            0.45
+          ]
+        },
+        "uCamX": 0.0
+      },
+      "text": [
+        {
+          "text": "between waking\nand dreaming",
+          "preset": "blur",
+          "at": 1,
+          "until": 5.5,
+          "pos": "upper",
+          "size": 96,
+          "font": "serif",
+          "color": "#fffaf6"
+        }
+      ],
+      "direction": {
+        "intent": "The place: through the glass into an endless dawn.",
+        "shot": "EWS colonnade over a mirror sea",
+        "camera": "Dead-centre dolly down the corridor through every arch (vertical-native framing), sun rising",
+        "lens": "35 mm",
+        "lighting": "Pastel dawn, low sun behind the arches, mirror reflections",
+        "sound": "Arps enter; VO 'You can't visit it.'",
+        "edit": "Portal: the dreamworld opens from the centre of the bottle"
+      }
+    },
+    {
+      "id": "S04",
+      "beats": 6,
+      "block": "particles",
+      "transition": "zoom",
+      "props": {
+        "from": {
+          "path": "M74,196 L126,196 L132,190 L132,82 L118,72 L110,66 L110,56 L90,56 L90,66 L82,72 L68,82 L68,190 Z M100,52 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0"
+        },
+        "text": "\u00c9ther",
+        "formAt": [
+          0.5,
+          4.5
+        ],
+        "turbulence": 1.1,
+        "colorA": "#b48cff",
+        "colorB": "#ffd1e3",
+        "background": "#1b1430",
+        "size": 28
+      },
+      "sfx": [
+        {
+          "name": "shimmer",
+          "atBeat": 3.5,
+          "volume": 0.5
+        }
+      ],
+      "direction": {
+        "intent": "Memory: the bottle dissolves into a constellation that writes the name.",
+        "shot": "Wide, particles",
+        "camera": "Slow orbit",
+        "lens": "40 mm",
+        "lighting": "Glowing points on deep violet night",
+        "sound": "Riser + shimmer as the name forms",
+        "edit": "Zoom-through from the colonnade into the night"
+      }
+    },
+    {
+      "id": "S05",
+      "beats": 4,
+      "block": "product",
+      "transition": "iris",
+      "props": {
+        "camera": {
+          "from": {
+            "orbit": -0.45,
+            "dist": 11.5,
+            "height": 3.6,
+            "lookY": 2.6,
+            "lens": 85
+          },
+          "to": {
+            "orbit": -0.2,
+            "dist": 9.8,
+            "height": 3.4,
+            "lookY": 2.7,
+            "lens": 85
+          },
+          "ease": "out"
+        },
+        "motion": {
+          "spin": 0.3
+        },
+        "bloom": 0.2,
+        "dof": "auto"
+      },
+      "direction": {
+        "intent": "Detail: the pearl stopper, iridescent.",
+        "shot": "CU stopper and shoulders",
+        "camera": "Push-in with drift",
+        "lens": "85 mm, shallow DOF",
+        "lighting": "Iridescent highlights from the sky dome",
+        "sound": "Impact softens into the outro pad",
+        "edit": "Iris morph from the constellation"
+      }
+    },
+    {
+      "id": "S06",
+      "beats": 6,
+      "block": "endcard",
+      "transition": "portal",
+      "props": {
+        "logoColor": "#2b2140",
+        "taglineColor": "#2b2140",
+        "logoSize": 190,
+        "motion": {
+          "spin": 0.25,
+          "float": 0.1
+        }
+      },
+      "direction": {
+        "intent": "The place becomes the product.",
+        "shot": "Hero + lockup",
+        "camera": "Gentle orbit",
+        "lens": "50 mm",
+        "lighting": "Dawn sky dome",
+        "sound": "Final VO line; pad resolves",
+        "edit": "Portal; hold logo 2+ s"
+      }
+    }
+  ]
+}

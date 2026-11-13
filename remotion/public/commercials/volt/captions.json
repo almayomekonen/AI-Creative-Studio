@@ -1,0 +1,30 @@
+[
+ {
+  "text": " Crack",
+  "startMs": 16400,
+  "endMs": 16720,
+  "timestampMs": 16400,
+  "confidence": 1.0
+ },
+ {
+  "text": " the",
+  "startMs": 16720,
+  "endMs": 16880,
+  "timestampMs": 16720,
+  "confidence": 1.0
+ },
+ {
+  "text": " night",
+  "startMs": 16880,
+  "endMs": 17140,
+  "timestampMs": 16880,
+  "confidence": 1.0
+ },
+ {
+  "text": " open.",
+  "startMs": 17140,
+  "endMs": 17580,
+  "timestampMs": 17140,
+  "confidence": 1.0
+ }
+]

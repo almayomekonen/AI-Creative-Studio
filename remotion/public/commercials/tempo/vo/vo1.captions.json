@@ -1,0 +1,37 @@
+[
+ {
+  "text": "Every",
+  "startMs": 0,
+  "endMs": 240,
+  "timestampMs": 0,
+  "confidence": 0.734
+ },
+ {
+  "text": " second",
+  "startMs": 240,
+  "endMs": 640,
+  "timestampMs": 240,
+  "confidence": 0.991
+ },
+ {
+  "text": " has",
+  "startMs": 640,
+  "endMs": 1000,
+  "timestampMs": 640,
+  "confidence": 0.996
+ },
+ {
+  "text": " a",
+  "startMs": 1000,
+  "endMs": 1140,
+  "timestampMs": 1000,
+  "confidence": 0.947
+ },
+ {
+  "text": " beat.",
+  "startMs": 1140,
+  "endMs": 1320,
+  "timestampMs": 1140,
+  "confidence": 0.993
+ }
+]

@@ -1,0 +1,58 @@
+[
+ {
+  "text": "There",
+  "startMs": 0,
+  "endMs": 200,
+  "timestampMs": 0,
+  "confidence": 0.692
+ },
+ {
+  "text": " is",
+  "startMs": 200,
+  "endMs": 400,
+  "timestampMs": 200,
+  "confidence": 0.993
+ },
+ {
+  "text": " a",
+  "startMs": 400,
+  "endMs": 500,
+  "timestampMs": 400,
+  "confidence": 0.996
+ },
+ {
+  "text": " place",
+  "startMs": 500,
+  "endMs": 760,
+  "timestampMs": 500,
+  "confidence": 0.995
+ },
+ {
+  "text": " between",
+  "startMs": 760,
+  "endMs": 1240,
+  "timestampMs": 760,
+  "confidence": 0.998
+ },
+ {
+  "text": " waking",
+  "startMs": 1240,
+  "endMs": 1620,
+  "timestampMs": 1240,
+  "confidence": 0.804
+ },
+ {
+  "text": " and",
+  "startMs": 1620,
+  "endMs": 1980,
+  "timestampMs": 1620,
+  "confidence": 0.997
+ },
+ {
+  "text": " dreaming.",
+  "startMs": 1980,
+  "endMs": 2340,
+  "timestampMs": 1980,
+  "confidence": 0.998
+ }
+]

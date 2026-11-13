@@ -3,10 +3,10 @@ import { ThreeCanvas } from "@remotion/three";
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import * as THREE from "three";
 
-export type Uniforms = Record<string, number | [number, number] | [number, number, number]>;
+export type Uniforms = Record<string, number | readonly number[]>;
 
 const toUniform = (v: Uniforms[string]) =>
-  typeof v === "number" ? v : v.length === 2 ? new THREE.Vector2(v[0], v[1]) : new THREE.Vector3(v[0], v[1], v[2]);
+  typeof v === "number" ? v : v.length === 2 ? new THREE.Vector2(v[0], v[1]) : new THREE.Vector3(v[0], v[1], v[2] ?? 0);
 
 const Quad: React.FC<{ fragment: string; uniforms: Uniforms }> = ({ fragment, uniforms }) => {
   const frame = useCurrentFrame();
