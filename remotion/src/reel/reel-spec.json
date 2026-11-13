@@ -1,0 +1,23 @@
+{
+  "title": "Written in Light",
+  "bpm": 120,
+  "fps": 30,
+  "key": "A minor",
+  "bars": 18,
+  "progression": [["A2", "minor"], ["F2", "major"], ["C3", "major"], ["G2", "major"]],
+  "barsPerChord": 1,
+  "sections": [
+    { "name": "intro",   "startBar": 0,  "bars": 4, "layers": ["pad", "riser@2"], "energy": 0.25 },
+    { "name": "drop1",   "startBar": 4,  "bars": 3, "layers": ["pad", "kick", "bass", "hats", "clap"], "energy": 0.7, "impact": true },
+    { "name": "build",   "startBar": 7,  "bars": 2, "layers": ["pad", "arp", "snareroll", "riser@7"], "energy": 0.55 },
+    { "name": "drop2",   "startBar": 9,  "bars": 4, "layers": ["pad", "kick", "bass", "hats16", "clap", "arp"], "energy": 1.0, "impact": true },
+    { "name": "montage", "startBar": 13, "bars": 2, "layers": ["pad", "kick", "bass", "hats16", "clap", "arp"], "energy": 1.0 },
+    { "name": "outro",   "startBar": 15, "bars": 3, "layers": ["pad"], "energy": 0.3, "impact": true }
+  ],
+  "voiceover": [
+    { "id": "vo1", "atSec": 0.8,  "text": "Nothing you are about to see was filmed." },
+    { "id": "vo2", "atSec": 8.6,  "text": "Every frame was written in code." },
+    { "id": "vo3", "atSec": 18.5, "text": "Light. Glass. Liquid. All simulated." },
+    { "id": "vo4", "atSec": 30.4, "text": "This is the studio." }
+  ]
+}

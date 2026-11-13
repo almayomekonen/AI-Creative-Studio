@@ -1,0 +1,44 @@
+[
+ {
+  "text": "Every",
+  "startMs": 0,
+  "endMs": 240,
+  "timestampMs": 0,
+  "confidence": 0.9
+ },
+ {
+  "text": " frame",
+  "startMs": 240,
+  "endMs": 640,
+  "timestampMs": 240,
+  "confidence": 0.951
+ },
+ {
+  "text": " was",
+  "startMs": 640,
+  "endMs": 920,
+  "timestampMs": 640,
+  "confidence": 0.989
+ },
+ {
+  "text": " written",
+  "startMs": 920,
+  "endMs": 1300,
+  "timestampMs": 920,
+  "confidence": 0.996
+ },
+ {
+  "text": " in",
+  "startMs": 1300,
+  "endMs": 1660,
+  "timestampMs": 1300,
+  "confidence": 0.996
+ },
+ {
+  "text": " code.",
+  "startMs": 1660,
+  "endMs": 2040,
+  "timestampMs": 1660,
+  "confidence": 0.981
+ }
+]

@@ -70,7 +70,7 @@ const Page: React.FC<{ page: TikTokPage; style: CaptionStyle }> = ({ page, style
  * Word-accurate social captions. Feed it `Caption[]` produced by scripts/py/transcribe.py
  * (faster-whisper word timestamps) — pages are grouped automatically and the spoken word is highlighted.
  */
-export const Captions: React.FC<{ captions: Caption[]; style: CaptionStyle; combineMs?: number }> = ({ captions, style, combineMs = 1200 }) => {
+export const Captions: React.FC<{ captions: Caption[]; style: CaptionStyle; combineMs?: number; holdMs?: number }> = ({ captions, style, combineMs = 1200, holdMs = 700 }) => {
   const { fps } = useVideoConfig();
   const { pages } = useMemo(() => createTikTokStyleCaptions({ captions, combineTokensWithinMilliseconds: combineMs }), [captions, combineMs]);
 
@@ -79,7 +79,9 @@ export const Captions: React.FC<{ captions: Caption[]; style: CaptionStyle; comb
       {pages.map((page, i) => {
         const next = pages[i + 1];
         const from = Math.round((page.startMs / 1000) * fps);
-        const endMs = next ? next.startMs : page.startMs + page.durationMs;
+        // hold a page until the next one starts, but never more than holdMs after its last word (no stale captions in pauses)
+        const lastWordEnd = page.tokens.length ? page.tokens[page.tokens.length - 1].toMs : page.startMs + page.durationMs;
+        const endMs = Math.min(next ? next.startMs : Infinity, lastWordEnd + holdMs);
         const dur = Math.max(1, Math.round(((endMs - page.startMs) / 1000) * fps));
         return (
           <Sequence key={i} from={from} durationInFrames={dur} layout="none">

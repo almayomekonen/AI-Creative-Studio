@@ -5,6 +5,8 @@ import { TalkingHead, type TalkingHeadProps } from "./compositions/TalkingHead";
 import { KineticText } from "./lib/KineticText";
 import { anton } from "./lib/fonts";
 import { FORMATS, theme } from "./theme";
+import { Reel, REEL_DURATION } from "./reel/Reel";
+import { LabSurreal, LabLiquid, LabGradient, LabParticles, LabProduct, LabMorph, LabGsap } from "./three/Lab";
 
 const showreelDefaults: ShowreelProps = {
   title: "Creative Studio",
@@ -43,6 +45,18 @@ export const RemotionRoot: React.FC = () => (
         defaultProps={talkingDefaults}
         calculateMetadata={({ props }) => ({ durationInFrames: Math.max(1, Math.round(props.durationSec * theme.fps)) })}
       />
+    </Folder>
+    <Folder name="Reel">
+      <Composition id="Reel-WrittenInLight" component={Reel} durationInFrames={REEL_DURATION} fps={30} {...FORMATS.landscape} />
+    </Folder>
+    <Folder name="Lab">
+      <Composition id="Lab-Surreal" component={LabSurreal} durationInFrames={240} fps={30} {...FORMATS.landscape} />
+      <Composition id="Lab-Liquid" component={LabLiquid} durationInFrames={180} fps={30} {...FORMATS.landscape} />
+      <Composition id="Lab-Gradient" component={LabGradient} durationInFrames={180} fps={30} {...FORMATS.landscape} />
+      <Composition id="Lab-Particles" component={LabParticles} durationInFrames={150} fps={30} {...FORMATS.landscape} />
+      <Composition id="Lab-Product" component={LabProduct} durationInFrames={180} fps={30} {...FORMATS.landscape} />
+      <Composition id="Lab-Morph" component={LabMorph} durationInFrames={110} fps={30} {...FORMATS.landscape} />
+      <Composition id="Lab-Gsap" component={LabGsap} durationInFrames={90} fps={30} {...FORMATS.landscape} />
     </Folder>
     <Still id="Thumbnail-16x9" component={Thumbnail} {...FORMATS.landscape} defaultProps={{ text: "Creative Studio" }} />
   </>

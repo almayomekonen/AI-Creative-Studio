@@ -1,0 +1,30 @@
+[
+ {
+  "id": "vo1",
+  "atSec": 0.8,
+  "text": "Nothing you are about to see was filmed.",
+  "file": "vo1.wav",
+  "durationSec": 2.02
+ },
+ {
+  "id": "vo2",
+  "atSec": 8.6,
+  "text": "Every frame was written in code.",
+  "file": "vo2.wav",
+  "durationSec": 2.322
+ },
+ {
+  "id": "vo3",
+  "atSec": 18.5,
+  "text": "Light. Glass. Liquid. All simulated.",
+  "file": "vo3.wav",
+  "durationSec": 3.652
+ },
+ {
+  "id": "vo4",
+  "atSec": 30.4,
+  "text": "This is the studio.",
+  "file": "vo4.wav",
+  "durationSec": 1.324
+ }
+]

@@ -4,7 +4,7 @@ shots:
   - id: S01
     scene: 1
     durationSec: 2.0
-    type: motion-graphics      # ai-video | ai-image | motion-graphics | footage | talking-head | stock | 3d
+    type: motion-graphics      # motion-graphics | typography | 3d | shader | particles | procedural | footage | talking-head
     intent: "Hook — stop the scroll"
     description: ""
     camera:
@@ -13,10 +13,8 @@ shots:
       movement: push-in        # static push-in pull-out pan tilt truck pedestal orbit crane handheld whip
       lens: 35mm
     lighting: ""
-    prompt: ""                 # generation prompt (ai-* types) — see skills cinematic-director / director-video
-    negative: ""
+    build: ""                  # how it's made in code: component/scene + key params (e.g. "ProductStage turntable, studio-3pt light")
     reference: ""              # storyboard frame or ref image path
-    model: ""                  # e.g. kling-2.x, veo-3, seedance — chosen at asset stage
     transitionIn: cut          # cut match-cut zoom-through whip flash fade j-cut l-cut
     audio: ""                  # SFX / music hit / VO line
     asset: ""                  # path in assets/ once generated or sourced

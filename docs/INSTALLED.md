@@ -1,5 +1,5 @@
 # Installed tools, skills & security notes
-_Last updated: 2026-11-13. Update this file whenever anything is installed, upgraded or removed._
+_Last updated: 2026-11-13 (strategy change: free & open-source only — see STRATEGY.md). Update this file whenever anything is installed, upgraded or removed._
 
 ## System (pre-existing, not modified)
 | Tool | Version | Source |
@@ -13,24 +13,28 @@ _Last updated: 2026-11-13. Update this file whenever anything is installed, upgr
 
 ## Node (project-local, exact versions in package.json / package-lock.json)
 remotion + @remotion/{cli,renderer,bundler,captions,transitions,media-utils,google-fonts,motion-blur,noise,paths,shapes,layout-utils,media} **4.0.543**, react/react-dom 19, hyperframes **0.9.41** (Apache-2.0), typescript 5, yaml 2.
+**3D/animation (added):** three **0.187.0**, @react-three/fiber **9.8.2**, @remotion/three **4.0.543**, gsap **3.15.1** (Standard no-charge licence), flubber **0.4.2**, @types/three. None have install scripts.
 Checked: none of these packages declare install/postinstall scripts.
 **Licence note:** Remotion is free for individuals and companies of ≤3 people; larger companies need a paid Remotion company licence.
 
 ## Python (`.venv`, isolated)
-faster-whisper 1.2 (CTranslate2, no torch), librosa, numpy, soundfile, opencv-python-headless, scenedetect, Pillow, python-dotenv, requests, pyyaml, jsonschema, pytest. Exact pins: `requirements.lock.txt`.
+faster-whisper 1.2 (CTranslate2, no torch), **piper-tts 1.8.0** (GPL-3.0 tool; deps onnxruntime + pathvalidate), librosa, numpy, soundfile, opencv-python-headless, scenedetect, Pillow, python-dotenv, requests, pyyaml, jsonschema, pytest. Exact pins: `requirements.lock.txt`.
 - `av` pinned `<16` — PyAV 16+ breaks faster-whisper 1.2 (`metadata_errors` kwarg).
 - `pydub` removed — broken on Python 3.13 (no `audioop`).
 - scenedetect pulls `opencv-python`; it was removed in favour of `opencv-python-headless` to avoid duplicate cv2/FFmpeg dylibs.
 - Whisper model `small` cached in `./models/huggingface` (git-ignored, ~464 MB).
+- Piper voices `en_US-ryan-medium`, `en_US-lessac-medium` in `./models/piper` (~63 MB each) from the official rhasspy/piper-voices repo via `piper.download_voices`.
 
 ## Claude Code skills — project-scoped (`.claude/skills/`)
 | Skill | Source @ commit | Licence | Review verdict |
 |---|---|---|---|
 | `remotion-best-practices` (+13 sub-skills) | remotion-dev/skills @ 7e541aa | Remotion licence | Markdown only; `agents/openai.yaml` stubs removed. Docs sub-skill fetches remotion.dev. |
 | `cinematic-director` | wuwangzhang1216/DirectorSKILL @ c65ae0d | MIT | Markdown only, no network/code. Small maintainer. |
-| `director-video` (renamed from `video`) | smixs/visual-skills @ 61a60d3 | **CC-BY-4.0 — attribution: Serge Shima** (NOTICE kept) | Markdown only. |
 | `ffmpeg-skill` | kajisho5/ffmpeg-skill @ b448ebc | MIT | 47 stdlib-only Python scripts; grep found no network calls, `shell=True` or eval. Its MCP server, installer (`bin/install.js` → ~/.claude) and repo `.claude/settings.json` were **not** copied. Star count looks inflated; code quality is good. Broad trigger may compete with HyperFrames `media-use`. |
-| `studio-*` (9) | written in-house | — | see `docs/PIPELINE.md` |
+| `studio-*` role skills (9) | in-house | — | see `docs/PIPELINE.md` |
+| `studio-*` capability skills (6): 3d-threejs, glsl-shaders, particles, morph-transitions, kinetic-typography, procedural-audio | in-house | — | see `docs/STRATEGY.md` |
+
+**Removed:** `director-video` (smixs/visual-skills) — it exists to prompt paid AI video generators, which the studio no longer uses.
 
 ## Global skills (pre-existing in `~/.claude/skills`, not modified)
 HyperFrames family (hyperframes, hyperframes-cli, -core, -animation, -creative, -keyframes, -registry, media-use, motion-graphics, embedded-captions, talking-head-recut, …) plus house-style motion skills (motion-doctrine, cut-the-curve, seam-craft, captions-overlay, oversized-cursor).
@@ -43,4 +47,5 @@ HyperFrames family (hyperframes, hyperframes-cli, -core, -animation, -creative, 
 | jianshuo/claude-skills | personal grab-bag with cron scripts; subtitles covered elsewhere. |
 | geegl/directorskills, Toni-xie/DirectorSkill | stale / no licence. |
 | Sound-design skills found | none met the bar (UI-sound only, or tied to a paid service). Covered by in-house `studio-sound-designer`. |
-| Local AI video/TTS/music models (Wan, Hunyuan, MusicGen, torch) | 8 GB RAM / disk — use cloud APIs instead. |
+| Local AI video/music models (Wan, Hunyuan, MusicGen, torch) | 8 GB RAM / disk. Replaced by procedural generation. |
+| Paid generation (Kling, Runway, Veo, Replicate, fal, ElevenLabs, HeyGen cloud) | Studio policy since 2026-11-13: no paid AI generation. |

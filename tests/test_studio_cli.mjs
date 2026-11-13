@@ -6,9 +6,9 @@ const good = { id: "S01", durationSec: 2, type: "motion-graphics", camera: { siz
 
 test("valid shot list passes", () => assert.deepEqual(validateShotlist({ shots: [good] }), []));
 test("empty shot list fails", () => assert.equal(validateShotlist({ shots: [] }).length, 1));
-test("ai-video shot needs a prompt", () => {
-  const errs = validateShotlist({ shots: [{ ...good, type: "ai-video", prompt: "" }] });
-  assert.ok(errs.some((e) => e.includes("need a prompt")));
+test("procedural 3d shot needs a build note", () => {
+  const errs = validateShotlist({ shots: [{ ...good, type: "3d", build: "" }] });
+  assert.ok(errs.some((e) => e.includes("build note")));
 });
 test("duplicate ids and bad transition are caught", () => {
   const errs = validateShotlist({ shots: [good, { ...good, transitionIn: "star-wipe" }] });

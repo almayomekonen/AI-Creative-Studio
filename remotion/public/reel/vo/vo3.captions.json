@@ -1,0 +1,51 @@
+[
+ {
+  "text": "Like,",
+  "startMs": 0,
+  "endMs": 400,
+  "timestampMs": 0,
+  "confidence": 0.25
+ },
+ {
+  "text": " do",
+  "startMs": 540,
+  "endMs": 820,
+  "timestampMs": 540,
+  "confidence": 0.262
+ },
+ {
+  "text": " as,",
+  "startMs": 820,
+  "endMs": 1200,
+  "timestampMs": 820,
+  "confidence": 0.689
+ },
+ {
+  "text": " live",
+  "startMs": 1740,
+  "endMs": 1940,
+  "timestampMs": 1740,
+  "confidence": 0.77
+ },
+ {
+  "text": " with,",
+  "startMs": 1940,
+  "endMs": 2180,
+  "timestampMs": 1940,
+  "confidence": 0.649
+ },
+ {
+  "text": " all",
+  "startMs": 2560,
+  "endMs": 2740,
+  "timestampMs": 2560,
+  "confidence": 0.977
+ },
+ {
+  "text": " simulated.",
+  "startMs": 2740,
+  "endMs": 3260,
+  "timestampMs": 2740,
+  "confidence": 0.985
+ }
+]

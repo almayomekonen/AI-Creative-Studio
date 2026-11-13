@@ -43,3 +43,16 @@ State lives in `production.yaml` (`stages:` pending → in_progress → review �
 | HyperFrames 10 s 1080p | 20 s |
 | Transcribe 6 s speech (whisper small, int8 CPU) | 5 s |
 | Full test suite | 56 s |
+
+## Demo reel — "Written in Light" (2026-11-13)
+37 s, 1920×1080, 30 fps, 2.39 letterbox. Every pixel and sound generated in this repo.
+| Bars | Scene | Tech |
+|---|---|---|
+| 0–4 | Surreal colonnade over a mirror sea + manifesto ("No cameras. No stock footage. No paid AI.") | raymarched GLSL, GSAP SplitText |
+| 4–7 | Liquid gold "Written in code" | noise-displaced chrome, procedural studio env, bloom, beat pulse |
+| 7–9 | 24k particles assemble "CODE", burst on the impact | GPU points, curl noise |
+| 9–13 | NOIR perfume product film: push-in, macro, hero lockup | Three.js PBR glass/metal, three-point light, glint sweep, mirrored floor |
+| 13–15 | Beat-cut morph montage | flubber morphs, liquid gradient shader |
+| 15–18 | Outro "Written in light" | crane up the shader world |
+Audio: procedural score (synth.py) with exact beat map, procedural SFX, Piper VO, script-aligned subtitles in the letterbox bar.
+Render: 52 s on the M1. QC: PASS (−14.2 LUFS, −1.5 dBTP). Rebuild: `bash scripts/pipeline/build-reel-assets.sh && node scripts/pipeline/render-remotion.mjs Reel-WrittenInLight renders/reel/master.mp4`.

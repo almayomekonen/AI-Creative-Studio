@@ -16,7 +16,7 @@ You make the film visible before anyone spends money on it.
 3. **Design the joins.** For every cut choose the transition and *why*: hard cut, **match cut** (shape/colour/motion/position continuity — note the matched element and its screen position), zoom-through, whip, flash on a beat, J/L-cut for dialogue.
 4. **Produce frames.** Options, cheapest first:
    - Typography/graphic shots → render a still from Remotion (`npx remotion still remotion/src/index.ts <Comp> out.png --frame N`) or HyperFrames snapshot.
-   - Live-action/AI shots → write an image prompt (use the `director-video` / `cinematic-director` skills for lexicon) and, only after the budget gate, generate key frames. These stills double as **image-to-video start frames** later.
+   - 3D / shader / particle shots → render a still of the actual scene (`npx remotion still … --frame N`). Boards made from the real scene code are the cheapest previs there is.
    - No budget → describe the frame precisely; a written board is acceptable.
 5. **Contact sheet check**: view all panels in sequence. Does the story read with no words? Is there visual rhythm (scale/colour variation)? Fix before handing off.
 

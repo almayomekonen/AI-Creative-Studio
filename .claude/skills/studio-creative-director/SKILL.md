@@ -22,7 +22,7 @@ Your job: find the **one idea** worth making, then protect it through every stag
 - One idea, executed with total commitment, beats five half-ideas. Kill darlings that don't serve it.
 - Specific beats generic: "a coffee cup filmed like a Michael Mann heist" > "cinematic coffee ad".
 - Design for the platform: vertical, sound-off first, hook in ≤2 s, payoff before the drop-off point.
-- Every concept must be *producible* with this studio's stack (Remotion/HyperFrames motion, cloud AI video, stock/footage). If a route needs a capability we lack, say so.
+- Every concept must be *producible* with this studio's stack (Remotion/HyperFrames motion, Three.js 3D, GLSL shaders, particles, procedural audio, Piper VO, own footage — no paid AI generation). If a route needs a capability we lack, say so.
 - Avoid AI-video clichés: endless slow-mo drone shots, morphing faces, glossy nothing, "epic" orchestral swells with no story.
 
 ## Reviewing other stages

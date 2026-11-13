@@ -15,6 +15,5 @@
 - Links / films / creators:
 
 ## Budget & constraints
-- Cloud generation budget (USD):
 - Deadline:
 - Assets available (footage, voice, logo, music):

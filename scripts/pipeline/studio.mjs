@@ -13,7 +13,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const PROD = join(ROOT, "productions");
 const TPL = join(ROOT, "studio/templates/production");
 export const STAGES = ["idea", "concept", "script", "storyboard", "shotlist", "assets", "production", "motion", "edit", "sound", "qc", "export"];
-const SHOT_TYPES = ["ai-video", "ai-image", "motion-graphics", "footage", "talking-head", "stock", "3d"];
+const SHOT_TYPES = ["motion-graphics", "typography", "3d", "shader", "particles", "procedural", "footage", "talking-head"];
 const TRANSITIONS = ["cut", "match-cut", "zoom-through", "whip", "flash", "fade", "j-cut", "l-cut", "dissolve", "wipe"];
 const STATUSES = ["planned", "generating", "review", "approved", "rejected"];
 const QC_BY_FORMAT = { vertical: "social-vertical", landscape: "youtube-16x9", square: "square", portrait: "any" };
@@ -77,7 +77,7 @@ export function validateShotlist(shotlist) {
     if (!SHOT_TYPES.includes(s.type)) errors.push(`${at}: type must be one of ${SHOT_TYPES.join("|")}`);
     if (s.transitionIn && !TRANSITIONS.includes(s.transitionIn)) errors.push(`${at}: transitionIn must be one of ${TRANSITIONS.join("|")}`);
     if (s.status && !STATUSES.includes(s.status)) errors.push(`${at}: status must be one of ${STATUSES.join("|")}`);
-    if ((s.type === "ai-video" || s.type === "ai-image") && !s.prompt?.trim()) errors.push(`${at}: ${s.type} shots need a prompt`);
+    if (["3d", "shader", "particles", "procedural"].includes(s.type) && !s.build?.trim()) errors.push(`${at}: ${s.type} shots need a build note (component + params)`);
     if (!s.camera?.size || !s.camera?.movement) errors.push(`${at}: camera.size and camera.movement are required`);
     if (s.status === "approved" && !s.asset) errors.push(`${at}: approved shots must reference an asset`);
   });

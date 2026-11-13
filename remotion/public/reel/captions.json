@@ -1,0 +1,163 @@
+[
+ {
+  "text": " Nothing",
+  "startMs": 800,
+  "endMs": 1080,
+  "timestampMs": 800,
+  "confidence": 1.0
+ },
+ {
+  "text": " you",
+  "startMs": 1080,
+  "endMs": 1260,
+  "timestampMs": 1080,
+  "confidence": 1.0
+ },
+ {
+  "text": " are",
+  "startMs": 1260,
+  "endMs": 1380,
+  "timestampMs": 1260,
+  "confidence": 1.0
+ },
+ {
+  "text": " about",
+  "startMs": 1380,
+  "endMs": 1600,
+  "timestampMs": 1380,
+  "confidence": 1.0
+ },
+ {
+  "text": " to",
+  "startMs": 1600,
+  "endMs": 1840,
+  "timestampMs": 1600,
+  "confidence": 1.0
+ },
+ {
+  "text": " see",
+  "startMs": 1840,
+  "endMs": 2040,
+  "timestampMs": 1840,
+  "confidence": 1.0
+ },
+ {
+  "text": " was",
+  "startMs": 2040,
+  "endMs": 2260,
+  "timestampMs": 2040,
+  "confidence": 1.0
+ },
+ {
+  "text": " filmed.",
+  "startMs": 2260,
+  "endMs": 2580,
+  "timestampMs": 2260,
+  "confidence": 1.0
+ },
+ {
+  "text": " Every",
+  "startMs": 8600,
+  "endMs": 8840,
+  "timestampMs": 8600,
+  "confidence": 1.0
+ },
+ {
+  "text": " frame",
+  "startMs": 8840,
+  "endMs": 9240,
+  "timestampMs": 8840,
+  "confidence": 1.0
+ },
+ {
+  "text": " was",
+  "startMs": 9240,
+  "endMs": 9520,
+  "timestampMs": 9240,
+  "confidence": 1.0
+ },
+ {
+  "text": " written",
+  "startMs": 9520,
+  "endMs": 9900,
+  "timestampMs": 9520,
+  "confidence": 1.0
+ },
+ {
+  "text": " in",
+  "startMs": 9900,
+  "endMs": 10260,
+  "timestampMs": 9900,
+  "confidence": 1.0
+ },
+ {
+  "text": " code.",
+  "startMs": 10260,
+  "endMs": 10640,
+  "timestampMs": 10260,
+  "confidence": 1.0
+ },
+ {
+  "text": " Light.",
+  "startMs": 18500,
+  "endMs": 19300,
+  "timestampMs": 18500,
+  "confidence": 1.0
+ },
+ {
+  "text": " Glass.",
+  "startMs": 19300,
+  "endMs": 20100,
+  "timestampMs": 19300,
+  "confidence": 1.0
+ },
+ {
+  "text": " Liquid.",
+  "startMs": 20100,
+  "endMs": 21060,
+  "timestampMs": 20100,
+  "confidence": 1.0
+ },
+ {
+  "text": " All",
+  "startMs": 21060,
+  "endMs": 21240,
+  "timestampMs": 21060,
+  "confidence": 1.0
+ },
+ {
+  "text": " simulated.",
+  "startMs": 21240,
+  "endMs": 21760,
+  "timestampMs": 21240,
+  "confidence": 1.0
+ },
+ {
+  "text": " This",
+  "startMs": 30400,
+  "endMs": 30620,
+  "timestampMs": 30400,
+  "confidence": 1.0
+ },
+ {
+  "text": " is",
+  "startMs": 30620,
+  "endMs": 30820,
+  "timestampMs": 30620,
+  "confidence": 1.0
+ },
+ {
+  "text": " the",
+  "startMs": 30820,
+  "endMs": 30980,
+  "timestampMs": 30820,
+  "confidence": 1.0
+ },
+ {
+  "text": " studio.",
+  "startMs": 30980,
+  "endMs": 31420,
+  "timestampMs": 30980,
+  "confidence": 1.0
+ }
+]

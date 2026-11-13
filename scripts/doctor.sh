@@ -17,7 +17,7 @@ ffmpeg -hide_banner -filters 2>/dev/null | grep -q " subtitles " && ok "ffmpeg l
 ls models/huggingface/hub 2>/dev/null | grep -q whisper && ok "whisper model" "cached in ./models" || warn "whisper model" "downloads on first transcribe (~480MB small)"
 SK=$(ls -d .claude/skills/*/ 2>/dev/null | wc -l | tr -d ' '); ok "project skills" "$SK installed"
 [[ "${HYPERFRAMES_NO_TELEMETRY:-}" == "1" ]] || grep -q HYPERFRAMES_NO_TELEMETRY .claude/settings.json && ok "telemetry" "HyperFrames/Remotion telemetry disabled" || warn "telemetry" "not disabled"
-[[ -f .env ]] && ok ".env" "present (keys not shown)" || warn ".env" "absent — cloud AI generation disabled (copy .env.example)"
+[[ -f .env ]] && ok ".env" "present (keys not shown)" || ok ".env" "not needed — studio is 100% free/open-source"
 FREE=$(df -g . | tail -1 | awk '{print $4}'); [[ $FREE -ge 10 ]] && ok "disk" "${FREE}GB free" || warn "disk" "${FREE}GB free — renders/models need space"
 MEM=$(( $(sysctl -n hw.memsize) / 1073741824 )); ok "memory" "${MEM}GB (render concurrency 2)"
 exit $FAIL

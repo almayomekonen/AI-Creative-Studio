@@ -1,0 +1,58 @@
+[
+ {
+  "text": "Nothing",
+  "startMs": 0,
+  "endMs": 280,
+  "timestampMs": 0,
+  "confidence": 0.736
+ },
+ {
+  "text": " you",
+  "startMs": 280,
+  "endMs": 460,
+  "timestampMs": 280,
+  "confidence": 0.98
+ },
+ {
+  "text": " are",
+  "startMs": 460,
+  "endMs": 580,
+  "timestampMs": 460,
+  "confidence": 0.901
+ },
+ {
+  "text": " about",
+  "startMs": 580,
+  "endMs": 800,
+  "timestampMs": 580,
+  "confidence": 0.993
+ },
+ {
+  "text": " to",
+  "startMs": 800,
+  "endMs": 1040,
+  "timestampMs": 800,
+  "confidence": 0.995
+ },
+ {
+  "text": " see",
+  "startMs": 1040,
+  "endMs": 1240,
+  "timestampMs": 1040,
+  "confidence": 0.998
+ },
+ {
+  "text": " was",
+  "startMs": 1240,
+  "endMs": 1460,
+  "timestampMs": 1240,
+  "confidence": 0.991
+ },
+ {
+  "text": " filmed.",
+  "startMs": 1460,
+  "endMs": 1780,
+  "timestampMs": 1460,
+  "confidence": 0.981
+ }
+]

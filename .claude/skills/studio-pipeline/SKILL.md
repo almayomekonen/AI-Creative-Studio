@@ -21,7 +21,7 @@ You run productions. You do not do every craft yourself: you route each stage to
 | 3 | script | studio-film-director (+ creative director review) | `02-script.md` |
 | 4 | storyboard | studio-storyboard-artist | `03-storyboard.md`, `storyboard/*.jpg` |
 | 5 | shotlist | studio-cinematographer | `shotlist.yaml` (run `npm run validate -- <id>`) |
-| 6 | assets | studio-cinematographer + director-video / cinematic-director | `assets/generated/*`, shot `asset:` paths |
+| 6 | assets | studio-cinematographer + capability skills (studio-3d-threejs, studio-glsl-shaders, studio-particles, studio-procedural-audio) | procedural scenes, music, SFX, Piper VO in `assets/` / `remotion/public/` |
 | 7 | production | studio-motion-designer / studio-video-editor | Remotion comps in `remotion/src/productions/<id>/` or HyperFrames project in `hyperframes/<id>/` |
 | 8 | motion | studio-motion-designer | typography, transitions, graphics layered in |
 | 9 | edit | studio-video-editor | locked cut, `edit/` decisions, captions |
@@ -32,7 +32,7 @@ You run productions. You do not do every craft yourself: you route each stage to
 ## Approval gates (stop and show the user)
 Gates are where human taste matters most and where rework is cheapest:
 - **After concept**: show the 3 routes + recommendation. Don't script an unapproved route.
-- **After storyboard + shot list**: show frames and the paid-generation estimate. **Never spend cloud credits (fal/Replicate/ElevenLabs/HeyGen) without explicit approval of the shot list and cost.**
+- **After storyboard + shot list**: show the previs stills (rendered from the real scene code) and the shot list.
 - **After first full render**: show the QC report + contact sheet before final export.
 Everything between gates: work autonomously.
 
@@ -43,8 +43,11 @@ Everything between gates: work autonomously.
 
 ## Constraints of this machine (Apple M1, 8 GB RAM, limited disk)
 - Render with concurrency ≤ 2. Close the Remotion Studio preview while rendering.
-- No local diffusion/video models — AI scene generation goes through cloud APIs (keys in `.env`, never in code).
+- **Studio policy: no paid AI generation services and no heavyweight local AI models.** Everything is procedural (Three.js, GLSL, particles, SVG, GSAP), own footage, procedural music/SFX, Piper VO and Whisper captions.
 - Keep heavy media out of git (`.gitignore` handles renders/assets).
+
+## Capability skills
+`studio-3d-threejs` · `studio-glsl-shaders` · `studio-particles` · `studio-morph-transitions` · `studio-kinetic-typography` · `studio-procedural-audio`. Reference production: `remotion/src/reel/Reel.tsx` ("Written in Light"), assets rebuilt by `scripts/pipeline/build-reel-assets.sh`.
 
 ## Definition of done
 `qc.py` PASS on every deliverable, `qc-checklist.md` completed, all stages `approved`, deliverables in `productions/<id>/renders/`.

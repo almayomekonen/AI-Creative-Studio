@@ -21,7 +21,7 @@ You build the moving image in code. Motion should *perform* — every movement s
 | `transitions.tsx` | `zoomThrough`, `whipPan`, `flashCut` (CSS-only, render-safe) + `@remotion/transitions` (fade, slide, wipe, clockWipe, iris…) |
 Reference implementation: `remotion/src/compositions/Showreel.tsx` (parallax world, graphic match cut, CSS-3D orbit, beat-pulsed stats, captions, end card).
 
-Remotion API depth: the `remotion-best-practices` skill. 3D beyond CSS: `@remotion/three` (install on demand — heavy).
+Remotion API depth: the `remotion-best-practices` skill. Real 3D, shaders, particles, morphs and GSAP: see `studio-3d-threejs`, `studio-glsl-shaders`, `studio-particles`, `studio-morph-transitions`, `studio-kinetic-typography` (all installed and verified).
 
 **HyperFrames** (`hyperframes/`) — use the global `hyperframes`, `hyperframes-animation`, `motion-graphics`, `motion-doctrine`, `cut-the-curve` skills. Scaffold with `npx hyperframes init <name> --non-interactive --skip-skills`. Always run `npx hyperframes check` — it catches contrast, layout and motion-craft problems.
 

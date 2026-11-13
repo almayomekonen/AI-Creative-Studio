@@ -1,16 +1,15 @@
 # Roadmap & known gaps
 
-## Needs the user
-1. **Cloud AI keys** (`.env`): FAL_KEY and/or REPLICATE_API_TOKEN (image→video, image gen), ELEVENLABS_API_KEY (VO/SFX/music). Without them the studio can do everything except generate new photoreal footage/voices.
-2. **HyperFrames global skills upgrade** (`npx hyperframes skills update`) — modifies `~/.claude/skills`; needs approval.
-3. **Remotion licence** if the studio is a company of more than 3 people.
-4. Optional: FFmpeg with libass (e.g. homebrew-ffmpeg tap) for burn-in subtitles directly in ffmpeg — system change, needs approval. Not required.
+## Decisions for the user
+1. **Blender** (optional, ~1.2 GB, installs to /Applications — outside the project): adds real fluid/cloth/rigid-body simulation and Cycles path tracing, driven headless from Python (`blender -b -P script.py`). Three.js covers current needs.
+2. **HyperFrames global skills update** (`npx hyperframes skills update`) — modifies `~/.claude/skills`.
+3. **Remotion licence** only if the studio becomes a company of more than 3 people.
 
-## Next capabilities to build
-- `scripts/py/generate.py`: provider-agnostic cloud generation client (fal/Replicate) reading shotlist.yaml, with cost estimate + dry-run, writing takes into `assets/generated/` (built but gated on keys).
-- ElevenLabs VO/SFX helper + automatic sidechain ducking.
-- Production comp generator: shotlist.yaml → Remotion timeline scaffold.
-- LUT pack in `studio/luts/` + `FilmLook` LUT support.
-- Brand-kit loader so `production.yaml` brand flows into Remotion props automatically.
-- Visual regression tests (snapshot frames vs. golden images).
-- First real production end-to-end to battle-test the gates.
+## Next capabilities (free/procedural)
+- glTF product pipeline: load client CAD/glTF models into ProductStage-style lighting.
+- More shader worlds: desert monoliths, underwater caustics, neon city (SDF repetition), volumetric clouds.
+- Image-to-particles and image-based 2.5D (depth from luminance) for client stills.
+- Synth: more genres (orchestral-ish pads, lo-fi), stems export, automatic VO ducking.
+- Kokoro TTS as a more expressive voice option (Apache-2.0, ~90 MB quantized) — evaluate quality vs Piper.
+- Visual regression tests: golden frames for each Lab composition.
+- 9:16 cut of the reel (reframe layouts for vertical).

@@ -11,7 +11,7 @@ Half of what people "see" is what they hear. Sound sells the cut, the scale and 
 - **Beat map**: `.venv/bin/python scripts/py/beats.py music.wav -o beats.json` → tempo, beats, downbeats, onsets, `energyPeakSec` (the drop). Cuts → `cutPointsFromBeats`, visual hits → `beatPulse`. Note: librosa tempo can be off by a few % on synthetic/sparse tracks — sanity-check against the known BPM.
 - **Mixing in Remotion**: `<Audio src volume={(f) => …}>` per layer; keyframe ducking with `interpolate`. Use `<Sequence from>` to place SFX on exact frames.
 - **HyperFrames**: global `media-use` skill resolves BGM/SFX/voice and handles TTS/ducking.
-- **Generation (cloud, needs approval + `.env` key)**: ElevenLabs for VO, SFX and music. Offline fallback for scratch VO: macOS `say` (used by test assets).
+- **Generation (local & free — see `studio-procedural-audio`)**: `synth.py` original music from a spec with exact beat maps, `sfx.py` SFX library, `tts.py` Piper voiceover, `align_captions.py` for script-exact captions. No paid voice/music APIs.
 - **Loudness**: `export.sh … --normalize` (two-pass EBU R128). Verify with `qc.py`.
 
 ## Layers (build in this order)
