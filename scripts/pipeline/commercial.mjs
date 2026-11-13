@@ -5,6 +5,7 @@
 //   node scripts/pipeline/commercial.mjs storyboard <id>  low-res preview render → storyboard frames + contact sheet + 9:16 mobile safe-zone sheet
 //   node scripts/pipeline/commercial.mjs render <id>      master render → normalized delivery → automated QC (+ QC report)
 //   node scripts/pipeline/commercial.mjs all <id>
+//   node scripts/pipeline/commercial.mjs check-vo <id>    validate human VO recordings (presence, length vs. window, clipping)
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -299,6 +300,35 @@ See \`storyboard/contact-sheet.jpg\` and \`storyboard/mobile-safe-check.jpg\`; r
   console.log(`✔ render: ${final}  QC ${r.status}`);
 }
 
+// ---------------- check-vo: validate a human recording before rebuilding ----------------
+function checkVo(id) {
+  const spec = load(id);
+  const spb = 60 / spec.music.bpm;
+  const { total } = timeline(spec);
+  const end = total / spec.fps;
+  const lines = spec.voiceover ?? [];
+  let bad = 0;
+  console.log(`VO check for ${id} — files in productions/ad-${id}/vo-final/`);
+  lines.forEach((v, i) => {
+    const f = join(prodDir(id), "vo-final", `${v.id}.wav`);
+    const start = v.atBeat * spb;
+    const next = lines[i + 1] ? lines[i + 1].atBeat * spb : end;
+    const win = +(next - start - 0.15).toFixed(2);
+    if (!existsSync(f)) { console.log(`  ✘ ${v.id}  missing  (“${v.text}”, max ${win}s)`); bad++; return; }
+    const dur = +sh("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], { quiet: true }).trim();
+    const vol = sh("ffmpeg", ["-hide_banner", "-nostats", "-i", f, "-af", "volumedetect", "-f", "null", "-"], { quiet: true, stdio: ["ignore", "pipe", "pipe"] });
+    const peak = +(vol.match(/max_volume: (-?[\d.]+)/)?.[1] ?? 0);
+    const issues = [];
+    if (dur > win) issues.push(`too long by ${(dur - win).toFixed(2)}s — trim silence or read faster`);
+    if (peak >= -0.5) issues.push(`peak ${peak} dB — likely clipping, re-record lower`);
+    if (peak < -20) issues.push(`peak ${peak} dB — very quiet, record closer/louder`);
+    console.log(`  ${issues.length ? "✘" : "✔"} ${v.id}  ${dur.toFixed(2)}s / max ${win}s  peak ${peak} dB${issues.length ? "  → " + issues.join("; ") : ""}`);
+    if (issues.length) bad++;
+  });
+  console.log(bad ? `\n${bad} line(s) need attention.` : "\nAll lines OK — run: node scripts/pipeline/commercial.mjs assets " + id + " && node scripts/pipeline/commercial.mjs render " + id);
+  if (bad) process.exitCode = 1;
+}
+
 const [cmd, id] = process.argv.slice(2);
 const ids = id === "all" ? readdirSync(join(ROOT, "remotion/src/commercials")).filter((f) => f.endsWith(".json")).map((f) => f.replace(".json", "")) : [id];
 if (!cmd || !id) { console.log("usage: commercial.mjs <assets|docs|storyboard|render|all> <id|all>"); process.exit(2); }
@@ -307,4 +337,5 @@ for (const i of ids) {
   if (cmd === "docs" || cmd === "all") docs(i);
   if (cmd === "storyboard" || cmd === "all") storyboard(i);
   if (cmd === "render" || cmd === "all") render(i);
+  if (cmd === "check-vo") checkVo(i);
 }
