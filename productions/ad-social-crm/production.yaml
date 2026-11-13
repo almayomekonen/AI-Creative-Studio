@@ -1,0 +1,27 @@
+id: ad-social-crm
+title: Social CRM — The Employee That Never Sleeps
+created: 2026-11-13
+engine: remotion (commercial engine)
+spec: remotion/src/commercials/social-crm.json
+composition: Ad-social-crm
+style: emerald-noir
+deliverables:
+  - name: main
+    format: vertical
+    fps: 60
+    durationSec: 35
+    qcSpec: social-vertical
+stages:
+  idea: review
+  concept: review
+  script: review
+  storyboard: review
+  shotlist: review
+  assets: review
+  production: review
+  motion: review
+  edit: review
+  sound: review
+  qc: review
+  export: review
+approvals: []

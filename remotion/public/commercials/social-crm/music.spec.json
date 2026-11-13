@@ -1,0 +1,85 @@
+{
+ "bpm": 120,
+ "bars": 36,
+ "beatsPerBar": 2,
+ "progression": [
+  [
+   "E2",
+   "minor"
+  ],
+  [
+   "C2",
+   "major"
+  ],
+  [
+   "G2",
+   "major"
+  ],
+  [
+   "D2",
+   "major"
+  ]
+ ],
+ "barsPerChord": 4,
+ "sections": [
+  {
+   "name": "chaos",
+   "startBar": 0,
+   "bars": 5,
+   "layers": [
+    "tick",
+    "hats16",
+    "snareroll",
+    "riser@0"
+   ],
+   "energy": 0.55
+  },
+  {
+   "name": "arrival",
+   "startBar": 5,
+   "bars": 5,
+   "layers": [
+    "pad",
+    "arp",
+    "riser@8"
+   ],
+   "energy": 0.55,
+   "impact": true
+  },
+  {
+   "name": "power",
+   "startBar": 10,
+   "bars": 13,
+   "layers": [
+    "kick",
+    "bass",
+    "hats16",
+    "clap",
+    "arp",
+    "pad"
+   ],
+   "energy": 0.9,
+   "impact": true
+  },
+  {
+   "name": "payoff",
+   "startBar": 23,
+   "bars": 7,
+   "layers": [
+    "pad"
+   ],
+   "energy": 0.12
+  },
+  {
+   "name": "brand",
+   "startBar": 30,
+   "bars": 6,
+   "layers": [
+    "pad",
+    "arp"
+   ],
+   "energy": 0.6,
+   "impact": true
+  }
+ ]
+}

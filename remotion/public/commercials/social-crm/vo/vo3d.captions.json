@@ -1,0 +1,16 @@
+[
+ {
+  "text": "מפית",
+  "startMs": 0,
+  "endMs": 320,
+  "timestampMs": 0,
+  "confidence": 0.813
+ },
+ {
+  "text": " קבלות",
+  "startMs": 320,
+  "endMs": 820,
+  "timestampMs": 320,
+  "confidence": 0.929
+ }
+]

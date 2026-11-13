@@ -1,0 +1,177 @@
+# Generated from the spec — edit the spec, not this file.
+shots:
+  - id: S01
+    scene: 1
+    durationSec: 5
+    type: procedural
+    intent: THE CHAOS — stop the scroll with density and tension.
+    description: Swarm → macro push-in on a phone
+    camera:
+      size: Swarm
+      angle: eye
+      movement: Starts inside a storm of message bubbles rushing past the lens; storm
+        parts; aggressive 14→2 unit dolly into the phone with handheld shake and
+        slight roll
+      lens: 24 mm (wide, aggressive) → 35 mm
+    lighting: "Dark luxury office at night: cool rim from the window city-bokeh,
+      phone screen as the key, red notification glints"
+    build: custom block — {}
+    reference: storyboard/S01.jpg
+    transitionIn: cut
+    audio: Accelerating notification pings stack into a riser, ticking hats, snare
+      roll; VO 'תדמיינו…'
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S02
+    scene: 2
+    durationSec: 5
+    type: procedural
+    intent: THE ARRIVAL — all messages converge into one point and the agent is born.
+    description: Convergence → hero object → interface
+    camera:
+      size: Convergence
+      angle: eye
+      movement: Locks to centre; slow orbit around the forming core; push into its
+        glass face
+      lens: 50 mm
+    lighting: "Darkness collapses into emerald: the core's inner light becomes the
+      key; chrome reflects a procedural studio"
+    build: custom block — {}
+    reference: storyboard/S02.jpg
+    transitionIn: cut
+    audio: Reverse-swoosh convergence, impact + flash at birth, pad and arpeggio
+      enter, riser
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S03A
+    scene: 3
+    durationSec: 2.5
+    type: procedural
+    intent: "Conversations: a WhatsApp lead arrives; the agent answers naturally in
+      Hebrew."
+    description: MCU glass interface slab
+    camera:
+      size: MCU
+      angle: eye
+      movement: Slow orbit left with push
+      lens: 50 mm, DOF on the slab
+    lighting: Emerald guide light from the agent orb; cool rim
+    build: custom block — {}
+    reference: storyboard/S03A.jpg
+    transitionIn: cut
+    audio: Incoming ping, typing clicks, reply ping; VO 'הוא מדבר עם הלידים'
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S03B
+    scene: 4
+    durationSec: 2.5
+    type: procedural
+    intent: "Quotes: a quotation forms in 3D and is approved by the owner before
+      sending."
+    description: Document forming + owner approval in WhatsApp
+    camera:
+      size: Document
+      angle: eye
+      movement: Camera travels along the emerald trail to the document, rises slightly
+      lens: 50 mm
+    lighting: Paper catches warm-white key; emerald approval glow
+    build: custom block — {}
+    reference: storyboard/S03B.jpg
+    transitionIn: cut
+    audio: Paper slide, approval chime on 'אישור'; VO 'מכין הצעות מחיר'
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S03C
+    scene: 5
+    durationSec: 2.5
+    type: procedural
+    intent: "Meetings: an appointment is created and confirmed."
+    description: Week calendar, one slot rises out of the grid
+    camera:
+      size: Week
+      angle: eye
+      movement: Travel + slight dutch correction, settles frontal
+      lens: 40 mm
+    lighting: Grid self-lit, slot glows emerald
+    build: custom block — {}
+    reference: storyboard/S03C.jpg
+    transitionIn: cut
+    audio: Tick on slot landing, confirm chime; VO 'קובע פגישות'
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S03D
+    scene: 6
+    durationSec: 2.5
+    type: procedural
+    intent: "Receipts: a professional receipt prints."
+    description: Receipt strip extruding downward
+    camera:
+      size: Receipt
+      angle: eye
+      movement: Tilt-down following the print
+      lens: 50 mm
+    lighting: Soft top light on paper, emerald rim
+    build: custom block — {}
+    reference: storyboard/S03D.jpg
+    transitionIn: cut
+    audio: Print/paper texture, confirm chime; VO 'מפיק קבלות'
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S03E
+    scene: 7
+    durationSec: 3
+    type: procedural
+    intent: "Opportunities: business data transforms into one highlighted opportunity."
+    description: Field of customer dots → highlighted cluster + insight
+    camera:
+      size: Field
+      angle: eye
+      movement: Pull back to reveal the field, then push to the cluster
+      lens: 35 mm
+    lighting: Dim data field, highlighted cluster blooms emerald
+    build: custom block — {}
+    reference: storyboard/S03E.jpg
+    transitionIn: cut
+    audio: Shimmer as the cluster lights; VO 'ומזהה הזדמנויות עסקיות'
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S04
+    scene: 8
+    durationSec: 7
+    type: procedural
+    intent: THE PAYOFF — complexity collapses; silence; time returns.
+    description: Phone on a desk; night becomes warm morning daylight; the owner is
+      implied (notebook with a growth plan, coffee, an empty chair turned to the
+      window)
+    camera:
+      size: Phone
+      angle: eye
+      movement: Slow, calm dolly along the desk; shallow focus
+      lens: 50 mm → 85 mm
+    lighting: Dark cool night → warm low sun through the window, volumetric beams,
+      dust in the light
+    build: custom block — {}
+    reference: storyboard/S04.jpg
+    transitionIn: cut
+    audio: Music drops to near silence; room tone; a single soft tone; VO 'אבל הדבר
+      הכי חשוב… את הזמן שלכם בחזרה'
+    asset: Ad-social-crm (procedural)
+    status: approved
+  - id: S05
+    scene: 9
+    durationSec: 5
+    type: procedural
+    intent: BRAND REVEAL — the hero becomes the real Social CRM logo.
+    description: Hero object → logo icon → wordmark → tagline
+    camera:
+      size: Hero
+      angle: eye
+      movement: Frontal, slow push
+      lens: 85 mm
+    lighting: Chrome and emerald on black, glint sweep across the icon
+    build: custom block — {}
+    reference: storyboard/S05.jpg
+    transitionIn: cut
+    audio: Impact, pad and arpeggio swell, final hit on the tagline; VO brand line
+    asset: Ad-social-crm (procedural)
+    status: approved

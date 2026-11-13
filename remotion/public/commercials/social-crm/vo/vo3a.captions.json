@@ -1,0 +1,30 @@
+[
+ {
+  "text": "הוא",
+  "startMs": 0,
+  "endMs": 120,
+  "timestampMs": 0,
+  "confidence": 0.907
+ },
+ {
+  "text": " מדבר",
+  "startMs": 120,
+  "endMs": 520,
+  "timestampMs": 120,
+  "confidence": 0.995
+ },
+ {
+  "text": " עם",
+  "startMs": 520,
+  "endMs": 740,
+  "timestampMs": 520,
+  "confidence": 0.979
+ },
+ {
+  "text": " עלידים.",
+  "startMs": 740,
+  "endMs": 1140,
+  "timestampMs": 740,
+  "confidence": 0.815
+ }
+]

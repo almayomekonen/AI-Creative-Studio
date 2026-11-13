@@ -1,0 +1,16 @@
+[
+ {
+  "text": "כובעת",
+  "startMs": 0,
+  "endMs": 440,
+  "timestampMs": 0,
+  "confidence": 0.688
+ },
+ {
+  "text": " גישות",
+  "startMs": 440,
+  "endMs": 860,
+  "timestampMs": 440,
+  "confidence": 0.726
+ }
+]

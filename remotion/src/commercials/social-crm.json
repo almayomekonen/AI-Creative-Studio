@@ -1,0 +1,66 @@
+{
+  "id": "social-crm",
+  "title": "Social CRM — The Employee That Never Sleeps",
+  "style": "emerald-noir",
+  "format": "vertical",
+  "fps": 60,
+  "language": "he",
+  "custom": true,
+  "product": "flacon",
+  "brand": { "name": "SocialCRM", "sub": "AI Agent", "tagline": "פחות להתעסק. יותר להצמיח.", "cta": "ישירות בוואטסאפ" },
+  "music": {
+    "bpm": 120, "bars": 36, "beatsPerBar": 2, "barsPerChord": 4,
+    "progression": [["E2", "minor"], ["C2", "major"], ["G2", "major"], ["D2", "major"]],
+    "sections": [
+      { "name": "chaos", "startBar": 0, "bars": 5, "layers": ["tick", "hats16", "snareroll", "riser@0"], "energy": 0.55 },
+      { "name": "arrival", "startBar": 5, "bars": 5, "layers": ["pad", "arp", "riser@8"], "energy": 0.55, "impact": true },
+      { "name": "power", "startBar": 10, "bars": 13, "layers": ["kick", "bass", "hats16", "clap", "arp", "pad"], "energy": 0.9, "impact": true },
+      { "name": "payoff", "startBar": 23, "bars": 7, "layers": ["pad"], "energy": 0.12 },
+      { "name": "brand", "startBar": 30, "bars": 6, "layers": ["pad", "arp"], "energy": 0.6, "impact": true }
+    ]
+  },
+  "voiceEngine": "say",
+  "voice": "Carmit",
+  "voiceLengthScale": 1.06,
+  "voiceNote": "SCRATCH VO (macOS Carmit) for internal review only — replace with a licensed human recording in productions/ad-social-crm/vo-final/<id>.wav before publishing.",
+  "voiceover": [
+    { "id": "vo1", "atBeat": 2.4, "text": "תדמיינו שיש לכם עובד חדש בעסק..." },
+    { "id": "vo2", "atBeat": 11.2, "text": "אבל לא סתם עובד. אחד שכבר מכיר את העסק שלכם." },
+    { "id": "vo3a", "atBeat": 20.6, "text": "הוא מדבר עם הלידים," },
+    { "id": "vo3b", "atBeat": 25.6, "text": "מכין הצעות מחיר," },
+    { "id": "vo3c", "atBeat": 30.6, "text": "קובע פגישות," },
+    { "id": "vo3d", "atBeat": 35.6, "text": "מפיק קבלות" },
+    { "id": "vo3e", "atBeat": 40.6, "text": "ומזהה הזדמנויות עסקיות." },
+    { "id": "vo4a", "atBeat": 47.6, "text": "אבל הדבר הכי חשוב שהוא נותן לכם..." },
+    { "id": "vo4b", "atBeat": 53.4, "text": "את הזמן שלכם בחזרה.", "subtitle": false },
+    { "id": "vo5", "atBeat": 61.0, "text": "Social CRM. העובד החדש שלכם. ישירות בוואטסאפ.", "tts": "סוֹשְׁיָאל סִי אָר אֶם. העובד החדש שלכם. ישירות בווטס אפ.", "subtitle": false }
+  ],
+  "tailFrames": 0,
+  "concept": {
+    "logline": "Your business never stops talking. Now someone answers — an employee made of light that already knows your business, working inside WhatsApp.",
+    "bigIdea": "The agent IS the logo: Social CRM's three-node graph becomes a living object — a liquid-chrome core in an emerald-lit glass shell, orbited by the brand's three nodes. It is born from the chaos of unanswered messages, works through five real jobs, gives the owner their time back, and collapses into the real logo.",
+    "hook": "Frame 0: you are already inside a storm of Hebrew WhatsApp messages rushing at the lens; pings stack into a riser; the storm parts to reveal one phone glowing in a dark office and the camera dives at it. Two hook versions were rendered (swarm-first vs push-first); see 01-concept.md for the selection.",
+    "progression": "Chaos (darkness, density) → Arrival (everything converges into one point; the agent is born) → Power (one continuous camera journey through five stations: conversation → quote → meeting → receipt → opportunity, each object transforming into the next) → Payoff (complexity collapses into the phone; silence; night becomes warm morning daylight) → Brand (the agent becomes the real logo).",
+    "ending": "World-is-the-product reveal: the hero object the viewer followed for 30 s resolves into the actual Social CRM icon, the wordmark types on, then the tagline 'פחות להתעסק. יותר להצמיח.' lands on the final beat.",
+    "audience": "Israeli small-business owners (clinics, studios, contractors, shops) who live in WhatsApp, answer leads at night, and feel they have no time to grow.",
+    "routes": [
+      { "name": "Born From Chaos", "idea": "The agent is literally made from the flood of unanswered messages, then works through a continuous five-station journey.", "why": "Turns the owner's daily pain into the origin of the hero; one continuous world; strongest product truth; the logo-as-hero gives a perfect ending.", "risk": "Five capabilities in 13 s can feel like a list — solved by making each object transform into the next (bubble → quote → calendar slot → receipt → data)." },
+      { "name": "Night Shift", "idea": "A clock runs through one night; the agent handles everything while the owner sleeps; morning reveal.", "why": "Very relatable.", "risk": "Needs a person sleeping — not honestly producible procedurally; slower pace. Folded into the payoff's night → day light change." },
+      { "name": "The Org Chart", "idea": "An org chart of a tiny business where one new box fills every role.", "why": "Clever and clear.", "risk": "Diagrammatic, reads like a SaaS explainer — exactly what the brief forbids. Killed." }
+    ],
+    "chosen": "Born From Chaos",
+    "rationale": "The only route where the visual hero, the story arc and the brand mark are the same object. Every scene is causal (the previous object becomes the next), which is what makes it feel like an elite tech commercial rather than an explainer.",
+    "scores": { "hook": 5, "originality": 4, "progression": 5, "transitions": 5, "ending": 5, "producibility": 4 }
+  },
+  "scenes": [
+    { "id": "S01", "beats": 10, "block": "custom", "direction": { "intent": "THE CHAOS — stop the scroll with density and tension.", "shot": "Swarm → macro push-in on a phone", "camera": "Starts inside a storm of message bubbles rushing past the lens; storm parts; aggressive 14→2 unit dolly into the phone with handheld shake and slight roll", "lens": "24 mm (wide, aggressive) → 35 mm", "lighting": "Dark luxury office at night: cool rim from the window city-bokeh, phone screen as the key, red notification glints", "sound": "Accelerating notification pings stack into a riser, ticking hats, snare roll; VO 'תדמיינו…'", "edit": "No cut — one aggressive move; ends on an impact at 5.0 s" } },
+    { "id": "S02", "beats": 10, "block": "custom", "direction": { "intent": "THE ARRIVAL — all messages converge into one point and the agent is born.", "shot": "Convergence → hero object → interface", "camera": "Locks to centre; slow orbit around the forming core; push into its glass face", "lens": "50 mm", "lighting": "Darkness collapses into emerald: the core's inner light becomes the key; chrome reflects a procedural studio", "sound": "Reverse-swoosh convergence, impact + flash at birth, pad and arpeggio enter, riser", "edit": "Seamless object morph: core → glass shell flattens into the agent interface (match into S03)" } },
+    { "id": "S03A", "beats": 5, "block": "custom", "direction": { "intent": "Conversations: a WhatsApp lead arrives; the agent answers naturally in Hebrew.", "shot": "MCU glass interface slab", "camera": "Slow orbit left with push", "lens": "50 mm, DOF on the slab", "lighting": "Emerald guide light from the agent orb; cool rim", "sound": "Incoming ping, typing clicks, reply ping; VO 'הוא מדבר עם הלידים'", "edit": "The agent's reply bubble lifts off and becomes the quote document (object morph)" } },
+    { "id": "S03B", "beats": 5, "block": "custom", "direction": { "intent": "Quotes: a quotation forms in 3D and is approved by the owner before sending.", "shot": "Document forming + owner approval in WhatsApp", "camera": "Camera travels along the emerald trail to the document, rises slightly", "lens": "50 mm", "lighting": "Paper catches warm-white key; emerald approval glow", "sound": "Paper slide, approval chime on 'אישור'; VO 'מכין הצעות מחיר'", "edit": "Approved document shrinks and flies into a calendar slot (object morph)" } },
+    { "id": "S03C", "beats": 5, "block": "custom", "direction": { "intent": "Meetings: an appointment is created and confirmed.", "shot": "Week calendar, one slot rises out of the grid", "camera": "Travel + slight dutch correction, settles frontal", "lens": "40 mm", "lighting": "Grid self-lit, slot glows emerald", "sound": "Tick on slot landing, confirm chime; VO 'קובע פגישות'", "edit": "The confirmed slot flips 180° and becomes the receipt header" } },
+    { "id": "S03D", "beats": 5, "block": "custom", "direction": { "intent": "Receipts: a professional receipt prints.", "shot": "Receipt strip extruding downward", "camera": "Tilt-down following the print", "lens": "50 mm", "lighting": "Soft top light on paper, emerald rim", "sound": "Print/paper texture, confirm chime; VO 'מפיק קבלות'", "edit": "Receipt dissolves into data particles that travel to the next station" } },
+    { "id": "S03E", "beats": 6, "block": "custom", "direction": { "intent": "Opportunities: business data transforms into one highlighted opportunity.", "shot": "Field of customer dots → highlighted cluster + insight", "camera": "Pull back to reveal the field, then push to the cluster", "lens": "35 mm", "lighting": "Dim data field, highlighted cluster blooms emerald", "sound": "Shimmer as the cluster lights; VO 'ומזהה הזדמנויות עסקיות'", "edit": "Everything collapses into the phone (match into S04)" } },
+    { "id": "S04", "beats": 14, "block": "custom", "direction": { "intent": "THE PAYOFF — complexity collapses; silence; time returns.", "shot": "Phone on a desk; night becomes warm morning daylight; the owner is implied (notebook with a growth plan, coffee, an empty chair turned to the window)", "camera": "Slow, calm dolly along the desk; shallow focus", "lens": "50 mm → 85 mm", "lighting": "Dark cool night → warm low sun through the window, volumetric beams, dust in the light", "sound": "Music drops to near silence; room tone; a single soft tone; VO 'אבל הדבר הכי חשוב… את הזמן שלכם בחזרה'", "edit": "Match cut from the collapse into the phone; the light change IS the transition" } },
+    { "id": "S05", "beats": 10, "block": "custom", "direction": { "intent": "BRAND REVEAL — the hero becomes the real Social CRM logo.", "shot": "Hero object → logo icon → wordmark → tagline", "camera": "Frontal, slow push", "lens": "85 mm", "lighting": "Chrome and emerald on black, glint sweep across the icon", "sound": "Impact, pad and arpeggio swell, final hit on the tagline; VO brand line", "edit": "Seamless morph: nodes take the logo positions, glass shell becomes the rounded-square icon" } }
+  ]
+}

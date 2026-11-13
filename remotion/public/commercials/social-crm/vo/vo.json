@@ -1,0 +1,72 @@
+[
+ {
+  "id": "vo1",
+  "file": "vo1.wav",
+  "atSec": 1.2,
+  "durationSec": 2.507,
+  "text": "תדמיינו שיש לכם עובד חדש בעסק..."
+ },
+ {
+  "id": "vo2",
+  "file": "vo2.wav",
+  "atSec": 5.6,
+  "durationSec": 3.452,
+  "text": "אבל לא סתם עובד. אחד שכבר מכיר את העסק שלכם."
+ },
+ {
+  "id": "vo3a",
+  "file": "vo3a.wav",
+  "atSec": 10.3,
+  "durationSec": 1.246,
+  "text": "הוא מדבר עם הלידים,"
+ },
+ {
+  "id": "vo3b",
+  "file": "vo3b.wav",
+  "atSec": 12.8,
+  "durationSec": 1.221,
+  "text": "מכין הצעות מחיר,"
+ },
+ {
+  "id": "vo3c",
+  "file": "vo3c.wav",
+  "atSec": 15.3,
+  "durationSec": 0.976,
+  "text": "קובע פגישות,"
+ },
+ {
+  "id": "vo3d",
+  "file": "vo3d.wav",
+  "atSec": 17.8,
+  "durationSec": 0.931,
+  "text": "מפיק קבלות"
+ },
+ {
+  "id": "vo3e",
+  "file": "vo3e.wav",
+  "atSec": 20.3,
+  "durationSec": 1.699,
+  "text": "ומזהה הזדמנויות עסקיות."
+ },
+ {
+  "id": "vo4a",
+  "file": "vo4a.wav",
+  "atSec": 23.8,
+  "durationSec": 2.337,
+  "text": "אבל הדבר הכי חשוב שהוא נותן לכם..."
+ },
+ {
+  "id": "vo4b",
+  "file": "vo4b.wav",
+  "atSec": 26.7,
+  "durationSec": 1.488,
+  "text": "את הזמן שלכם בחזרה."
+ },
+ {
+  "id": "vo5",
+  "file": "vo5.wav",
+  "atSec": 30.5,
+  "durationSec": 4.235,
+  "text": "Social CRM. העובד החדש שלכם. ישירות בוואטסאפ."
+ }
+]

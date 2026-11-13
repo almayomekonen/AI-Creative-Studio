@@ -1,0 +1,30 @@
+[
+ {
+  "text": "את",
+  "startMs": 0,
+  "endMs": 120,
+  "timestampMs": 0,
+  "confidence": 0.721
+ },
+ {
+  "text": " הזמן",
+  "startMs": 120,
+  "endMs": 420,
+  "timestampMs": 120,
+  "confidence": 0.991
+ },
+ {
+  "text": " שלכם",
+  "startMs": 420,
+  "endMs": 900,
+  "timestampMs": 420,
+  "confidence": 0.95
+ },
+ {
+  "text": " בחזרה",
+  "startMs": 900,
+  "endMs": 1380,
+  "timestampMs": 900,
+  "confidence": 0.981
+ }
+]

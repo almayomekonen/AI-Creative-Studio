@@ -1,0 +1,51 @@
+[
+ {
+  "text": "סושיאל",
+  "startMs": 0,
+  "endMs": 480,
+  "timestampMs": 0,
+  "confidence": 0.621
+ },
+ {
+  "text": " CRM,",
+  "startMs": 480,
+  "endMs": 1140,
+  "timestampMs": 480,
+  "confidence": 0.72
+ },
+ {
+  "text": " העובד",
+  "startMs": 1340,
+  "endMs": 1860,
+  "timestampMs": 1340,
+  "confidence": 0.961
+ },
+ {
+  "text": " החדש",
+  "startMs": 1860,
+  "endMs": 2300,
+  "timestampMs": 1860,
+  "confidence": 0.812
+ },
+ {
+  "text": " שלכם,",
+  "startMs": 2300,
+  "endMs": 2820,
+  "timestampMs": 2300,
+  "confidence": 0.972
+ },
+ {
+  "text": " ישירות",
+  "startMs": 3060,
+  "endMs": 3540,
+  "timestampMs": 3060,
+  "confidence": 0.99
+ },
+ {
+  "text": " בבצעה",
+  "startMs": 3540,
+  "endMs": 4120,
+  "timestampMs": 3540,
+  "confidence": 0.789
+ }
+]

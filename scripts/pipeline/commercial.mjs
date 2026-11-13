@@ -17,7 +17,7 @@ const sh = (cmd, args, opts = {}) => (execFileSync(cmd, args, { cwd: ROOT, stdio
 
 // Must mirror remotion/src/engine/transitions.tsx OVERLAP
 const OVERLAP = { cut: 0, flash: 0, whip: 8, zoom: 10, portal: 14, glitch: 6, iris: 14 };
-const BLOCK_TYPE = { product: "3d", shader: "shader", particles: "particles", chrome: "3d", type: "typography", montage: "motion-graphics", endcard: "3d" };
+const BLOCK_TYPE = { product: "3d", shader: "shader", particles: "particles", chrome: "3d", type: "typography", montage: "motion-graphics", endcard: "3d", custom: "procedural" };
 
 const load = (id) => JSON.parse(readFileSync(join(ROOT, `remotion/src/commercials/${id}.json`), "utf8"));
 const prodDir = (id) => join(ROOT, "productions", `ad-${id}`);
@@ -44,15 +44,23 @@ function assets(id) {
   const spec = load(id);
   const out = pubDir(id);
   mkdirSync(join(out, "vo"), { recursive: true });
-  const music = { bpm: spec.music.bpm, bars: spec.music.bars, progression: spec.music.progression, barsPerChord: spec.music.barsPerChord ?? 1, sections: spec.music.sections };
+  const music = { bpm: spec.music.bpm, bars: spec.music.bars, beatsPerBar: spec.music.beatsPerBar ?? 4, progression: spec.music.progression, barsPerChord: spec.music.barsPerChord ?? 1, sections: spec.music.sections };
   writeFileSync(join(out, "music.spec.json"), JSON.stringify(music, null, 1));
   sh(PY, ["scripts/py/synth.py", join(out, "music.spec.json"), "-o", join(out, "music.wav")], { quiet: true });
   const spb = 60 / spec.music.bpm;
   const lines = [];
   for (const v of spec.voiceover ?? []) {
     const wav = join(out, "vo", `${v.id}.wav`);
-    const r = JSON.parse(sh(PY, ["scripts/py/tts.py", v.text, "-o", wav, "--voice", spec.voice ?? "en_US-ryan-medium", "--length-scale", "1.35"], { quiet: true }));
-    sh(PY, ["scripts/py/transcribe.py", wav, "-o", wav.replace(/\.wav$/, ""), "--model", "small", "--lang", "en"], { quiet: true });
+    // A real recording in productions/ad-<id>/vo-final/<voId>.wav always wins over TTS (scratch → final swap).
+    const finalVo = join(prodDir(id), "vo-final", `${v.id}.wav`);
+    let r;
+    if (existsSync(finalVo)) {
+      sh("ffmpeg", ["-y", "-loglevel", "error", "-i", finalVo, "-af", "highpass=f=70,aformat=sample_rates=48000:channel_layouts=stereo", wav]);
+      r = { durationSec: +sh("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", wav], { quiet: true }).trim() };
+    } else {
+      r = JSON.parse(sh(PY, ["scripts/py/tts.py", v.tts ?? v.text, "-o", wav, "--voice", spec.voice ?? "en_US-ryan-medium", "--engine", spec.voiceEngine ?? "piper", "--length-scale", String(spec.voiceLengthScale ?? 1.35)], { quiet: true }));
+    }
+    sh(PY, ["scripts/py/transcribe.py", wav, "-o", wav.replace(/\.wav$/, ""), "--model", "small", "--lang", spec.language ?? "en"], { quiet: true });
     lines.push({ id: v.id, file: `${v.id}.wav`, atSec: +(v.atBeat * spb).toFixed(3), durationSec: r.durationSec, text: v.text });
   }
   writeFileSync(join(out, "vo", "vo.json"), JSON.stringify(lines, null, 1));
@@ -267,9 +275,11 @@ function render(id) {
   const master = join(d, "renders", `${id}-master.mp4`);
   const final = join(d, "renders", `${id}-9x16-final.mp4`);
   sh("node", ["scripts/pipeline/render-remotion.mjs", `Ad-${id}`, master, "--crf", "16"]);
-  sh("bash", ["scripts/pipeline/export.sh", master, spec.format === "vertical" ? "social-vertical" : "youtube", final, "--normalize"]);
+  // delivery preset follows the spec's frame rate — never silently drop 60 fps to 30
+  const vert60 = spec.format === "vertical" && spec.fps === 60;
+  sh("bash", ["scripts/pipeline/export.sh", master, vert60 ? "social-vertical-60" : spec.format === "vertical" ? "social-vertical" : "youtube", final, "--normalize"]);
   let qc;
-  try { qc = sh(PY, ["scripts/py/qc.py", final, "--spec", spec.format === "vertical" ? "social-vertical" : "youtube-16x9", "--json", join(d, "renders", "qc.json")], { quiet: true }); } catch (e) { qc = e.stdout?.toString() ?? ""; }
+  try { qc = sh(PY, ["scripts/py/qc.py", final, "--spec", vert60 ? "social-vertical-60" : spec.format === "vertical" ? "social-vertical" : "youtube-16x9", "--json", join(d, "renders", "qc.json")], { quiet: true }); } catch (e) { qc = e.stdout?.toString() ?? ""; }
   const r = JSON.parse(readFileSync(join(d, "renders", "qc.json"), "utf8"));
   writeFileSync(join(d, "qc-report.md"), `# QC Report — ${spec.title}
 

@@ -10,6 +10,9 @@ import { LabLibrary } from "./three/LabLibrary";
 import { Commercial, calculateCommercialMetadata, commercialDuration } from "./engine/Commercial";
 import { COMMERCIALS } from "./commercials";
 import type { CommercialSpec } from "./engine/types";
+import { HookTest } from "./productions/social-crm/HookTests";
+import { SocialCrmAd } from "./productions/social-crm/Ad";
+import socialCrmSpec from "./commercials/social-crm.json";
 import { LabSurreal, LabLiquid, LabGradient, LabParticles, LabProduct, LabMorph, LabGsap } from "./three/Lab";
 
 const showreelDefaults: ShowreelProps = {
@@ -66,6 +69,13 @@ export const RemotionRoot: React.FC = () => (
           calculateMetadata={calculateCommercialMetadata}
         />
       ))}
+    </Folder>
+    <Folder name="SocialCRM">
+      <Composition id="Ad-social-crm" component={SocialCrmAd} fps={60} {...FORMATS.vertical} durationInFrames={commercialDuration(socialCrmSpec as unknown as CommercialSpec)} defaultProps={{ spec: socialCrmSpec as unknown as CommercialSpec }} calculateMetadata={calculateCommercialMetadata} />
+    </Folder>
+    <Folder name="SocialCRM-Dev">
+      <Composition id="SCRM-Hook-swarm" component={HookTest} durationInFrames={600} fps={60} {...FORMATS.vertical} defaultProps={{ hook: "swarm" as const }} />
+      <Composition id="SCRM-Hook-push" component={HookTest} durationInFrames={600} fps={60} {...FORMATS.vertical} defaultProps={{ hook: "push" as const }} />
     </Folder>
     <Folder name="Lab">
       <Composition id="Lab-Surreal" component={LabSurreal} durationInFrames={240} fps={30} {...FORMATS.landscape} />

@@ -1,0 +1,37 @@
+[
+ {
+  "text": "ומזהי",
+  "startMs": 0,
+  "endMs": 440,
+  "timestampMs": 0,
+  "confidence": 0.319
+ },
+ {
+  "text": " הזדמנו",
+  "startMs": 440,
+  "endMs": 900,
+  "timestampMs": 440,
+  "confidence": 0.654
+ },
+ {
+  "text": " יוטי",
+  "startMs": 900,
+  "endMs": 1220,
+  "timestampMs": 900,
+  "confidence": 0.559
+ },
+ {
+  "text": " -סקי",
+  "startMs": 1220,
+  "endMs": 1440,
+  "timestampMs": 1220,
+  "confidence": 0.758
+ },
+ {
+  "text": " -יוט",
+  "startMs": 1440,
+  "endMs": 1600,
+  "timestampMs": 1440,
+  "confidence": 0.672
+ }
+]

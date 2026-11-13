@@ -1,0 +1,65 @@
+[
+ {
+  "text": "אבל",
+  "startMs": 0,
+  "endMs": 200,
+  "timestampMs": 0,
+  "confidence": 0.981
+ },
+ {
+  "text": " אוסטם",
+  "startMs": 200,
+  "endMs": 600,
+  "timestampMs": 200,
+  "confidence": 0.473
+ },
+ {
+  "text": " עובד,",
+  "startMs": 600,
+  "endMs": 960,
+  "timestampMs": 600,
+  "confidence": 0.983
+ },
+ {
+  "text": " אחד",
+  "startMs": 1160,
+  "endMs": 1400,
+  "timestampMs": 1160,
+  "confidence": 0.99
+ },
+ {
+  "text": " שכבר",
+  "startMs": 1400,
+  "endMs": 1880,
+  "timestampMs": 1400,
+  "confidence": 0.992
+ },
+ {
+  "text": " מכיר",
+  "startMs": 1880,
+  "endMs": 2280,
+  "timestampMs": 1880,
+  "confidence": 0.995
+ },
+ {
+  "text": " את",
+  "startMs": 2280,
+  "endMs": 2400,
+  "timestampMs": 2280,
+  "confidence": 0.994
+ },
+ {
+  "text": " העסק",
+  "startMs": 2400,
+  "endMs": 2820,
+  "timestampMs": 2400,
+  "confidence": 0.897
+ },
+ {
+  "text": " שלכם",
+  "startMs": 2820,
+  "endMs": 3300,
+  "timestampMs": 2820,
+  "confidence": 0.958
+ }
+]

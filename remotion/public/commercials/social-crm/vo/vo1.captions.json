@@ -1,0 +1,44 @@
+[
+ {
+  "text": "תדמיינו",
+  "startMs": 0,
+  "endMs": 500,
+  "timestampMs": 0,
+  "confidence": 0.884
+ },
+ {
+  "text": " שיש",
+  "startMs": 500,
+  "endMs": 840,
+  "timestampMs": 500,
+  "confidence": 0.994
+ },
+ {
+  "text": " לכם",
+  "startMs": 840,
+  "endMs": 1200,
+  "timestampMs": 840,
+  "confidence": 0.976
+ },
+ {
+  "text": " עובד",
+  "startMs": 1200,
+  "endMs": 1480,
+  "timestampMs": 1200,
+  "confidence": 0.988
+ },
+ {
+  "text": " חדש",
+  "startMs": 1480,
+  "endMs": 1880,
+  "timestampMs": 1480,
+  "confidence": 0.993
+ },
+ {
+  "text": " ביסק.",
+  "startMs": 1880,
+  "endMs": 2380,
+  "timestampMs": 1880,
+  "confidence": 0.83
+ }
+]

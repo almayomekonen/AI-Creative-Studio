@@ -23,6 +23,7 @@ from fractions import Fraction
 SPECS = {
     # name: (width, height, fps, lufs_target, lufs_tol, true_peak_max, max_duration)
     "social-vertical": (1080, 1920, 30, -14.0, 1.5, -1.0, 180),
+    "social-vertical-60": (1080, 1920, 60, -14.0, 1.5, -1.0, 180),
     "youtube-16x9": (1920, 1080, 30, -14.0, 1.5, -1.0, None),
     "broadcast-16x9": (1920, 1080, 25, -23.0, 1.0, -1.0, None),
     "square": (1080, 1080, 30, -14.0, 1.5, -1.0, 120),

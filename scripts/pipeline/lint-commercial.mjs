@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const DIR = join(ROOT, "remotion/src/commercials");
 const UNEXPECTED = ["portal", "iris", "glitch", "zoom", "whip"];
-const BLOCKS = ["product", "shader", "particles", "chrome", "type", "montage", "endcard"];
+const BLOCKS = ["product", "shader", "particles", "chrome", "type", "montage", "endcard", "custom"];
 const PRESETS = ["slam", "rise", "blur", "track", "stack", "typewriter", "split", "outline", "glitch", "giant"];
 
 export function lint(spec) {
@@ -17,16 +17,19 @@ export function lint(spec) {
   if (!Number.isInteger(fpb)) e.push(`bpm ${spec.music.bpm} gives ${fpb} frames/beat — pick a bpm with an integer frames/beat`);
   const beats = spec.scenes.reduce((a, s) => a + s.beats, 0);
   const secs = (beats * fpb + (spec.tailFrames ?? 0)) / spec.fps;
-  if (secs < 15 || secs > 30) e.push(`duration ${secs.toFixed(1)}s outside 15–30s`);
+  const maxS = spec.custom ? 60 : 30;
+  if (secs < 15 || secs > maxS) e.push(`duration ${secs.toFixed(1)}s outside 15–${maxS}s`);
   if (beats > spec.music.bars * 4) e.push(`scenes (${beats} beats) longer than the score (${spec.music.bars * 4} beats)`);
   if (spec.scenes.length < 4) e.push("needs ≥4 scenes");
-  const distinct = new Set(spec.scenes.map((s) => s.block + (s.props?.shader ?? "") + (s.props?.stage ?? ""))).size;
-  if (distinct < 4) e.push(`only ${distinct} visually distinct scene types (need ≥4)`);
-  const unexpected = spec.scenes.filter((s) => UNEXPECTED.includes(s.transition)).length;
-  if (unexpected < 2) e.push(`only ${unexpected} unexpected transitions (need ≥2)`);
+  if (!spec.custom) {
+    const distinct = new Set(spec.scenes.map((s) => s.block + (s.props?.shader ?? "") + (s.props?.stage ?? ""))).size;
+    if (distinct < 4) e.push(`only ${distinct} visually distinct scene types (need ≥4)`);
+    const unexpected = spec.scenes.filter((s) => UNEXPECTED.includes(s.transition)).length;
+    if (unexpected < 2) e.push(`only ${unexpected} unexpected transitions (need ≥2)`);
+  }
   if (spec.scenes[0].transition && spec.scenes[0].transition !== "cut") w.push("first scene has a transition — the hook should start on frame 0");
   if (spec.scenes[0].beats * fpb > spec.fps * 3) w.push("hook scene longer than 3 s");
-  if (spec.scenes.at(-1).block !== "endcard") e.push("last scene must be an endcard (memorable ending + lockup)");
+  if (!spec.custom && spec.scenes.at(-1).block !== "endcard") e.push("last scene must be an endcard (memorable ending + lockup)");
   if ((spec.scenes.at(-1).beats * fpb) / spec.fps < 1.5) e.push("endcard shorter than 1.5 s");
   const c = spec.concept ?? {};
   for (const k of ["logline", "bigIdea", "hook", "progression", "ending", "chosen", "rationale"]) if (!c[k]) e.push(`concept.${k} missing`);

@@ -101,7 +101,50 @@ def sub_drop(d, rng):
     return pan(np.sin(2 * np.pi * np.cumsum(70 * np.exp(-t * 1.2) + 25) / SR) * np.exp(-t * 1.5) * 0.9, 0)
 
 
-LIB = {"whoosh": (whoosh, 0.7), "hit": (hit, 1.2), "riser": (riser, 3.0), "shimmer": (shimmer, 2.0), "glitch": (glitch, 0.5), "tick": (tick, 0.08), "sub_drop": (sub_drop, 2.5)}
+def ping(d, rng):
+    """message notification: two soft mallet tones"""
+    n = int(max(d, 0.5) * SR)
+    t = np.arange(n) / SR
+    a = np.sin(2 * np.pi * 1318.5 * t) * np.exp(-t * 9)
+    b = np.roll(np.sin(2 * np.pi * 1975.5 * t) * np.exp(-t * 8), int(0.07 * SR)) * 0.8
+    return pan((a + b) * 0.35 * (1 - np.exp(-t * 400)), 0.2)
+
+
+def confirm(d, rng):
+    """approval chime: rising major third + fifth, warm"""
+    n = int(max(d, 0.9) * SR)
+    t = np.arange(n) / SR
+    out = np.zeros(n)
+    for k, (f, o) in enumerate([(659.3, 0.0), (830.6, 0.07), (987.8, 0.14)]):
+        s = int(o * SR)
+        tt = t[: n - s]
+        out[s:] += (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(2 * np.pi * 2 * f * tt)) * np.exp(-tt * 4.5) * 0.25
+    return pan(out, 0)
+
+
+def typing(d, rng):
+    """soft UI typing clicks"""
+    n = int(max(d, 0.6) * SR)
+    out = np.zeros(n)
+    tpos = 0.0
+    while tpos < d - 0.05:
+        i = int(tpos * SR)
+        m = int(0.012 * SR)
+        clk = bp(rng.standard_normal(m), 2500, 7000) * np.exp(-np.arange(m) / SR * 500) * rng.uniform(0.15, 0.3)
+        out[i : i + m] += clk[: max(0, min(m, n - i))]
+        tpos += rng.uniform(0.06, 0.12)
+    return pan(out, -0.1)
+
+
+def paper(d, rng):
+    """paper slide / document print"""
+    n = int(d * SR)
+    t = np.linspace(0, 1, n)
+    noise = bp(rng.standard_normal(n), 900, 6000)
+    return pan(noise * np.sin(np.pi * t) ** 0.8 * 0.35 * (0.7 + 0.3 * np.sin(t * 60)), 0)
+
+
+LIB = {"whoosh": (whoosh, 0.7), "hit": (hit, 1.2), "riser": (riser, 3.0), "shimmer": (shimmer, 2.0), "glitch": (glitch, 0.5), "tick": (tick, 0.08), "sub_drop": (sub_drop, 2.5), "ping": (ping, 0.6), "confirm": (confirm, 1.0), "typing": (typing, 0.9), "paper": (paper, 0.7)}
 
 
 def main() -> int:

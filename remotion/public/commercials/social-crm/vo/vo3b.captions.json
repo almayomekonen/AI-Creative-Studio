@@ -1,0 +1,23 @@
+[
+ {
+  "text": "מכי",
+  "startMs": 0,
+  "endMs": 300,
+  "timestampMs": 0,
+  "confidence": 0.5
+ },
+ {
+  "text": " נצאות",
+  "startMs": 300,
+  "endMs": 740,
+  "timestampMs": 300,
+  "confidence": 0.888
+ },
+ {
+  "text": " מכיר",
+  "startMs": 740,
+  "endMs": 1120,
+  "timestampMs": 740,
+  "confidence": 0.915
+ }
+]

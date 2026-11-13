@@ -169,7 +169,8 @@ def reverb_ir(seconds=2.6):
 def render(spec: dict):
     bpm = spec["bpm"]
     beat = 60.0 / bpm
-    bar = beat * 4
+    bpb = int(spec.get("beatsPerBar", 4))
+    bar = beat * bpb
     total = spec["bars"] * bar + 3.0  # tail
     N = int(total * SR)
     dry = np.zeros((2, N))   # drums (not sidechained)
@@ -191,21 +192,22 @@ def render(spec: dict):
         for b in range(s0, s0 + nb):
             t0 = b * bar
             root, notes = chord_at(b)
-            if "pad" in layers:
-                pc = pad_chord(notes, bar + 0.6, E)
+            if "pad" in layers and (b == s0 or b % bpc == 0):
+                span = min(bpc - (b % bpc), s0 + nb - b)  # sustain across the whole chord, not retrigger per bar
+                pc = pad_chord(notes, span * bar + 0.6, E)
                 place(music, pc * (0.7 + 0.5 * E), t0)
                 place(send, pc * 0.6, t0)
-            for q in range(4):
+            for q in range(bpb):
                 tb = t0 + q * beat
                 if "kick" in layers:
                     place(dry, stereo(kick() * 0.9), tb)
                     kicks.append(tb)
-                if "clap" in layers and q in (1, 3):
+                if "clap" in layers and q % 2 == 1:
                     c = stereo(clap(), 0.0)
                     place(dry, c, tb)
                     place(send, c * 0.5, tb)
                 if "bass" in layers:
-                    for e8 in range(2):
+                    for e8 in range(2 if E < 0.95 else 2):
                         place(music, stereo(bass_note(hz(root), beat / 2 * 0.9)), tb + e8 * beat / 2)
                 if "hats" in layers:
                     place(dry, stereo(hat(), 0.3), tb + beat / 2)
@@ -214,7 +216,7 @@ def render(spec: dict):
                         v = 0.5 + 0.5 * (s16 % 2 == 1) + 0.1 * rng.random()
                         place(dry, stereo(hat(open_=(s16 == 2 and q == 3)) * v, 0.35), tb + s16 * beat / 4)
                 if "arp" in layers:
-                    seq = [notes[0] + 12, notes[1] + 12, notes[2] + 12, notes[1] + 24]
+                    seq = [notes[0] + 12, notes[1] + 12, notes[2] + 12, notes[1] + 24]  # 16th arpeggio
                     for s16 in range(4):
                         p = stereo(pluck(hz(seq[(q * 4 + s16) % 4]), beat / 2), -0.4 + 0.8 * (s16 % 2))
                         place(music, p * 0.8, tb + s16 * beat / 4)
@@ -225,7 +227,7 @@ def render(spec: dict):
                 if "snareroll" in layers:
                     div = 2 if b == s0 else 4 if q < 2 else 8
                     for k in range(div):
-                        frac = ((b - s0) * 4 + q + k / div) / (nb * 4)
+                        frac = ((b - s0) * bpb + q + k / div) / (nb * bpb)
                         place(dry, stereo(clap() * (0.2 + 0.6 * frac)), tb + k * beat / div)
         for l in layers:
             if l.startswith("riser@"):
@@ -256,11 +258,11 @@ def render(spec: dict):
     fo = int(2.0 * SR)
     mix[:, -fo:] *= np.linspace(1, 0, fo)
 
-    beats = [round(i * beat, 4) for i in range(spec["bars"] * 4)]
+    beats = [round(i * beat, 4) for i in range(spec["bars"] * bpb)]
     meta = {
         "tempo": bpm,
         "beats": beats,
-        "downbeats": beats[::4],
+        "downbeats": beats[::bpb],
         "sections": [{"name": s["name"], "startSec": s["startBar"] * bar, "endSec": (s["startBar"] + s["bars"]) * bar} for s in spec["sections"]],
         "impacts": impacts,
         "kicks": sorted(set(round(k, 4) for k in kicks)),

@@ -1,0 +1,338 @@
+[
+ {
+  "text": " \u05ea\u05d3\u05de\u05d9\u05d9\u05e0\u05d5",
+  "startMs": 1200,
+  "endMs": 1700,
+  "timestampMs": 1200,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e9\u05d9\u05e9",
+  "startMs": 1700,
+  "endMs": 2040,
+  "timestampMs": 1700,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05dc\u05db\u05dd",
+  "startMs": 2040,
+  "endMs": 2400,
+  "timestampMs": 2040,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e2\u05d5\u05d1\u05d3",
+  "startMs": 2400,
+  "endMs": 2680,
+  "timestampMs": 2400,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d7\u05d3\u05e9",
+  "startMs": 2680,
+  "endMs": 3080,
+  "timestampMs": 2680,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d1\u05e2\u05e1\u05e7...",
+  "startMs": 3080,
+  "endMs": 3580,
+  "timestampMs": 3080,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d0\u05d1\u05dc",
+  "startMs": 5600,
+  "endMs": 5800,
+  "timestampMs": 5600,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05dc\u05d0",
+  "startMs": 5800,
+  "endMs": 5960,
+  "timestampMs": 5800,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e1\u05ea\u05dd",
+  "startMs": 5960,
+  "endMs": 6200,
+  "timestampMs": 5960,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e2\u05d5\u05d1\u05d3.",
+  "startMs": 6200,
+  "endMs": 6560,
+  "timestampMs": 6200,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d0\u05d7\u05d3",
+  "startMs": 6760,
+  "endMs": 7000,
+  "timestampMs": 6760,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e9\u05db\u05d1\u05e8",
+  "startMs": 7000,
+  "endMs": 7480,
+  "timestampMs": 7000,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05de\u05db\u05d9\u05e8",
+  "startMs": 7480,
+  "endMs": 7880,
+  "timestampMs": 7480,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d0\u05ea",
+  "startMs": 7880,
+  "endMs": 8000,
+  "timestampMs": 7880,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05e2\u05e1\u05e7",
+  "startMs": 8000,
+  "endMs": 8420,
+  "timestampMs": 8000,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e9\u05dc\u05db\u05dd.",
+  "startMs": 8420,
+  "endMs": 8900,
+  "timestampMs": 8420,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05d5\u05d0",
+  "startMs": 10300,
+  "endMs": 10420,
+  "timestampMs": 10300,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05de\u05d3\u05d1\u05e8",
+  "startMs": 10420,
+  "endMs": 10820,
+  "timestampMs": 10420,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e2\u05dd",
+  "startMs": 10820,
+  "endMs": 11040,
+  "timestampMs": 10820,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05dc\u05d9\u05d3\u05d9\u05dd,",
+  "startMs": 11040,
+  "endMs": 11440,
+  "timestampMs": 11040,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05de\u05db\u05d9\u05df",
+  "startMs": 12800,
+  "endMs": 13144,
+  "timestampMs": 12800,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05e6\u05e2\u05d5\u05ea",
+  "startMs": 13144,
+  "endMs": 13575,
+  "timestampMs": 13144,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05de\u05d7\u05d9\u05e8,",
+  "startMs": 13575,
+  "endMs": 13920,
+  "timestampMs": 13575,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e7\u05d5\u05d1\u05e2",
+  "startMs": 15300,
+  "endMs": 15644,
+  "timestampMs": 15300,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e4\u05d2\u05d9\u05e9\u05d5\u05ea,",
+  "startMs": 15644,
+  "endMs": 16160,
+  "timestampMs": 15644,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05de\u05e4\u05d9\u05e7",
+  "startMs": 17800,
+  "endMs": 18120,
+  "timestampMs": 17800,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e7\u05d1\u05dc\u05d5\u05ea",
+  "startMs": 18120,
+  "endMs": 18620,
+  "timestampMs": 18120,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d5\u05de\u05d6\u05d4\u05d4",
+  "startMs": 20300,
+  "endMs": 20700,
+  "timestampMs": 20300,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05d6\u05d3\u05de\u05e0\u05d5\u05d9\u05d5\u05ea",
+  "startMs": 20700,
+  "endMs": 21420,
+  "timestampMs": 20700,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e2\u05e1\u05e7\u05d9\u05d5\u05ea.",
+  "startMs": 21420,
+  "endMs": 21900,
+  "timestampMs": 21420,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d0\u05d1\u05dc",
+  "startMs": 23800,
+  "endMs": 24000,
+  "timestampMs": 23800,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05d3\u05d1\u05e8",
+  "startMs": 24000,
+  "endMs": 24340,
+  "timestampMs": 24000,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05db\u05d9",
+  "startMs": 24340,
+  "endMs": 24660,
+  "timestampMs": 24340,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d7\u05e9\u05d5\u05d1",
+  "startMs": 24660,
+  "endMs": 25000,
+  "timestampMs": 24660,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e9\u05d4\u05d5\u05d0",
+  "startMs": 25000,
+  "endMs": 25240,
+  "timestampMs": 25000,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e0\u05d5\u05ea\u05df",
+  "startMs": 25240,
+  "endMs": 25660,
+  "timestampMs": 25240,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05dc\u05db\u05dd...",
+  "startMs": 25660,
+  "endMs": 26000,
+  "timestampMs": 25660,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d0\u05ea",
+  "startMs": 26700,
+  "endMs": 26820,
+  "timestampMs": 26700,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05d6\u05de\u05df",
+  "startMs": 26820,
+  "endMs": 27120,
+  "timestampMs": 26820,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e9\u05dc\u05db\u05dd",
+  "startMs": 27120,
+  "endMs": 27600,
+  "timestampMs": 27120,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d1\u05d7\u05d6\u05e8\u05d4.",
+  "startMs": 27600,
+  "endMs": 28080,
+  "timestampMs": 27600,
+  "confidence": 1.0
+ },
+ {
+  "text": " Social",
+  "startMs": 30500,
+  "endMs": 30980,
+  "timestampMs": 30500,
+  "confidence": 1.0
+ },
+ {
+  "text": " CRM.",
+  "startMs": 30980,
+  "endMs": 31640,
+  "timestampMs": 30980,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05e2\u05d5\u05d1\u05d3",
+  "startMs": 31840,
+  "endMs": 32360,
+  "timestampMs": 31840,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d4\u05d7\u05d3\u05e9",
+  "startMs": 32360,
+  "endMs": 32800,
+  "timestampMs": 32360,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05e9\u05dc\u05db\u05dd.",
+  "startMs": 32800,
+  "endMs": 33320,
+  "timestampMs": 32800,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d9\u05e9\u05d9\u05e8\u05d5\u05ea",
+  "startMs": 33560,
+  "endMs": 34040,
+  "timestampMs": 33560,
+  "confidence": 1.0
+ },
+ {
+  "text": " \u05d1\u05d5\u05d5\u05d0\u05d8\u05e1\u05d0\u05e4.",
+  "startMs": 34040,
+  "endMs": 34620,
+  "timestampMs": 34040,
+  "confidence": 1.0
+ }
+]

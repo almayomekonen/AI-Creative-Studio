@@ -1,0 +1,51 @@
+[
+ {
+  "text": "אבל",
+  "startMs": 0,
+  "endMs": 200,
+  "timestampMs": 0,
+  "confidence": 0.964
+ },
+ {
+  "text": " הדבר",
+  "startMs": 200,
+  "endMs": 540,
+  "timestampMs": 200,
+  "confidence": 0.997
+ },
+ {
+  "text": " הכי",
+  "startMs": 540,
+  "endMs": 860,
+  "timestampMs": 540,
+  "confidence": 0.986
+ },
+ {
+  "text": " חשוב",
+  "startMs": 860,
+  "endMs": 1200,
+  "timestampMs": 860,
+  "confidence": 0.999
+ },
+ {
+  "text": " שהוא",
+  "startMs": 1200,
+  "endMs": 1440,
+  "timestampMs": 1200,
+  "confidence": 0.944
+ },
+ {
+  "text": " נותן",
+  "startMs": 1440,
+  "endMs": 1860,
+  "timestampMs": 1440,
+  "confidence": 0.984
+ },
+ {
+  "text": " לכם",
+  "startMs": 1860,
+  "endMs": 2200,
+  "timestampMs": 1860,
+  "confidence": 0.975
+ }
+]
