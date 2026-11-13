@@ -1,0 +1,23 @@
+# Shot list — machine-readable. Validated by scripts/pipeline/studio.mjs validate.
+# Owner: Cinematographer (camera/lens/light) + Director (intent).
+shots:
+  - id: S01
+    scene: 1
+    durationSec: 2.0
+    type: motion-graphics      # ai-video | ai-image | motion-graphics | footage | talking-head | stock | 3d
+    intent: "Hook — stop the scroll"
+    description: ""
+    camera:
+      size: WS                 # EWS WS MS MCU CU ECU insert
+      angle: eye               # eye low high overhead dutch pov
+      movement: push-in        # static push-in pull-out pan tilt truck pedestal orbit crane handheld whip
+      lens: 35mm
+    lighting: ""
+    prompt: ""                 # generation prompt (ai-* types) — see skills cinematic-director / director-video
+    negative: ""
+    reference: ""              # storyboard frame or ref image path
+    model: ""                  # e.g. kling-2.x, veo-3, seedance — chosen at asset stage
+    transitionIn: cut          # cut match-cut zoom-through whip flash fade j-cut l-cut
+    audio: ""                  # SFX / music hit / VO line
+    asset: ""                  # path in assets/ once generated or sourced
+    status: planned            # planned | generating | review | approved | rejected

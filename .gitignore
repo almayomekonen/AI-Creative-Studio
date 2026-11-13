@@ -1,0 +1,43 @@
+# Dependencies & environments
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Heavy media & outputs (track via docs, not git)
+renders/
+tmp/
+productions/*/renders/
+productions/*/cache/
+assets/footage/*
+assets/music/*
+assets/sfx/*
+assets/voice/*
+assets/images/*
+!assets/**/.gitkeep
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+*.m4a
+!tests/fixtures/**
+
+# Model weights
+models/
+*.bin
+*.safetensors
+*.onnx
+
+# OS / editor
+.DS_Store
+.remotion/
+out/
+.hyperframes/

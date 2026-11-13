@@ -1,0 +1,30 @@
+# Production manifest — single source of truth for this video. Agents update `stages` as they work.
+id: "{{ID}}"
+title: "{{TITLE}}"
+created: "{{DATE}}"
+client: ""
+objective: ""            # what must the viewer feel / do?
+audience: ""
+platforms: []            # e.g. [tiktok, reels, youtube]
+engine: remotion         # remotion | hyperframes | hybrid
+brand: studio/brand/default.yaml
+deliverables:
+  - name: main
+    format: vertical     # vertical | landscape | square | portrait
+    fps: 30
+    targetDurationSec: 30
+    qcSpec: social-vertical
+stages:                  # pending | in_progress | review | approved
+  idea: in_progress
+  concept: pending
+  script: pending
+  storyboard: pending
+  shotlist: pending
+  assets: pending
+  production: pending
+  motion: pending
+  edit: pending
+  sound: pending
+  qc: pending
+  export: pending
+approvals: []            # {stage, by, date, note} — human sign-off at gates

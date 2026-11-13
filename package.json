@@ -1,0 +1,45 @@
+{
+  "name": "ai-creative-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Independent AI Creative Studio — professional AI video production pipeline",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "studio": "remotion studio remotion/src/index.ts",
+    "render": "node scripts/pipeline/render-remotion.mjs",
+    "hf": "hyperframes",
+    "new": "node scripts/pipeline/studio.mjs new",
+    "status": "node scripts/pipeline/studio.mjs status",
+    "validate": "node scripts/pipeline/studio.mjs validate",
+    "doctor": "bash scripts/doctor.sh",
+    "test": "bash tests/run-all.sh",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.543",
+    "@remotion/captions": "4.0.543",
+    "@remotion/cli": "4.0.543",
+    "@remotion/google-fonts": "4.0.543",
+    "@remotion/layout-utils": "4.0.543",
+    "@remotion/media": "4.0.543",
+    "@remotion/media-utils": "4.0.543",
+    "@remotion/motion-blur": "4.0.543",
+    "@remotion/noise": "4.0.543",
+    "@remotion/paths": "4.0.543",
+    "@remotion/renderer": "4.0.543",
+    "@remotion/shapes": "4.0.543",
+    "@remotion/transitions": "4.0.543",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.543",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "hyperframes": "0.9.41",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "extends": "./remotion/tsconfig.json",
+  "include": ["remotion/src", "remotion.config.ts"]
+}

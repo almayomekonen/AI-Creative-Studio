@@ -1,0 +1,14 @@
+{
+  "env": {
+    "HYPERFRAMES_NO_TELEMETRY": "1",
+    "HF_HOME": "./models/huggingface",
+    "REMOTION_DISABLE_TELEMETRY": "1"
+  },
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Read(./.env.production)"
+    ]
+  }
+}

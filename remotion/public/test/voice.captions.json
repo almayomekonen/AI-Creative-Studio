@@ -1,0 +1,142 @@
+[
+ {
+  "text": "Most",
+  "startMs": 0,
+  "endMs": 200,
+  "timestampMs": 0,
+  "confidence": 0.922
+ },
+ {
+  "text": " videos",
+  "startMs": 200,
+  "endMs": 560,
+  "timestampMs": 200,
+  "confidence": 0.993
+ },
+ {
+  "text": " lose",
+  "startMs": 560,
+  "endMs": 880,
+  "timestampMs": 560,
+  "confidence": 0.984
+ },
+ {
+  "text": " the",
+  "startMs": 880,
+  "endMs": 1100,
+  "timestampMs": 880,
+  "confidence": 0.997
+ },
+ {
+  "text": " viewer",
+  "startMs": 1100,
+  "endMs": 1320,
+  "timestampMs": 1100,
+  "confidence": 0.992
+ },
+ {
+  "text": " in",
+  "startMs": 1320,
+  "endMs": 1540,
+  "timestampMs": 1320,
+  "confidence": 0.998
+ },
+ {
+  "text": " 3",
+  "startMs": 1540,
+  "endMs": 1780,
+  "timestampMs": 1540,
+  "confidence": 0.648
+ },
+ {
+  "text": " seconds.",
+  "startMs": 1780,
+  "endMs": 2260,
+  "timestampMs": 1780,
+  "confidence": 0.972
+ },
+ {
+  "text": " Here",
+  "startMs": 2640,
+  "endMs": 2800,
+  "timestampMs": 2640,
+  "confidence": 0.975
+ },
+ {
+  "text": " is",
+  "startMs": 2800,
+  "endMs": 2980,
+  "timestampMs": 2800,
+  "confidence": 0.994
+ },
+ {
+  "text": " how",
+  "startMs": 2980,
+  "endMs": 3140,
+  "timestampMs": 2980,
+  "confidence": 0.998
+ },
+ {
+  "text": " we",
+  "startMs": 3140,
+  "endMs": 3300,
+  "timestampMs": 3140,
+  "confidence": 0.997
+ },
+ {
+  "text": " keep",
+  "startMs": 3300,
+  "endMs": 3500,
+  "timestampMs": 3300,
+  "confidence": 0.987
+ },
+ {
+  "text": " them",
+  "startMs": 3500,
+  "endMs": 3740,
+  "timestampMs": 3500,
+  "confidence": 0.998
+ },
+ {
+  "text": " watching",
+  "startMs": 3740,
+  "endMs": 4040,
+  "timestampMs": 3740,
+  "confidence": 0.995
+ },
+ {
+  "text": " until",
+  "startMs": 4040,
+  "endMs": 4320,
+  "timestampMs": 4040,
+  "confidence": 0.992
+ },
+ {
+  "text": " the",
+  "startMs": 4320,
+  "endMs": 4540,
+  "timestampMs": 4320,
+  "confidence": 0.998
+ },
+ {
+  "text": " very",
+  "startMs": 4540,
+  "endMs": 4800,
+  "timestampMs": 4540,
+  "confidence": 0.998
+ },
+ {
+  "text": " last",
+  "startMs": 4800,
+  "endMs": 5100,
+  "timestampMs": 4800,
+  "confidence": 0.998
+ },
+ {
+  "text": " frame.",
+  "startMs": 5100,
+  "endMs": 5420,
+  "timestampMs": 5100,
+  "confidence": 0.998
+ }
+]

@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:01,540
+Most videos lose the viewer in
+
+2
+00:00:01,540 --> 00:00:02,260
+3 seconds.
+
+3
+00:00:02,640 --> 00:00:03,740
+Here is how we keep them
+
+4
+00:00:03,740 --> 00:00:05,420
+watching until the very last frame.

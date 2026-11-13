@@ -1,0 +1,14 @@
+# Studio Python toolchain — lean by design (M1 8GB / limited disk). No torch.
+faster-whisper>=1.1      # local word-level transcription for subtitles (CTranslate2, no torch)
+numpy>=2.0
+librosa>=0.10            # beat / onset detection for music sync
+soundfile>=0.12
+Pillow>=11
+opencv-python-headless>=4.10   # scene-cut detection, frame analysis, QC
+scenedetect>=0.6.5       # PySceneDetect: shot boundary detection for editing / match cuts
+python-dotenv>=1.0       # load .env secrets (never hardcoded)
+requests>=2.32
+pyyaml>=6.0
+jsonschema>=4.23         # validate production manifests
+pytest>=8.3
+av>=14,<16               # pinned: PyAV 16+ breaks faster-whisper 1.2 decode_audio

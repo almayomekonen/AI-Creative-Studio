@@ -1,0 +1,11 @@
+# Default studio brand kit. Copy per client: studio/brand/<client>.yaml
+name: Studio Default
+colors: { ink: "#0B0B0F", paper: "#F4F1EA", accent: "#FF4D2E", accent2: "#2E6BFF", gold: "#E8C26A" }
+fonts: { display: Anton, serif: Instrument Serif, body: Inter }
+logo: ""
+voice:
+  tone: confident, cinematic, concise
+  avoid: [hype words, exclamation marks, clichés like "game-changer"]
+audio:
+  loudness: { social: -14, broadcast: -23 }
+captions: { style: word-highlight, uppercase: true, highlight: gold }
