@@ -11,4 +11,5 @@ requests>=2.32
 pyyaml>=6.0
 jsonschema>=4.23         # validate production manifests
 pytest>=8.3
+piper-tts==1.8.0         # local neural TTS (GPL-3.0 tool); voices in ./models/piper (git-ignored)
 av>=14,<16               # pinned: PyAV 16+ breaks faster-whisper 1.2 decode_audio
