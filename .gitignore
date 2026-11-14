@@ -1,6 +1,9 @@
 # Dependencies & environments
 node_modules/
 .venv/
+.venv-*/
+venv/
+env/
 __pycache__/
 *.pyc
 
@@ -10,6 +13,8 @@ __pycache__/
 !.env.example
 *.pem
 *.key
+credentials/
+secrets/
 
 # Heavy media & outputs (track via docs, not git)
 renders/
@@ -30,13 +35,32 @@ assets/images/*
 *.m4a
 !tests/fixtures/**
 
-# Model weights
+# Model weights & formats
 models/
 *.bin
 *.safetensors
 *.onnx
+*.pt
+*.pth
+*.ckpt
+*.gguf
 
-# OS / editor
+# Local AI caches
+.cache/
+.huggingface/
+
+# Local databases & logs
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Third-party tools, avatar lab (personal references & outputs) & local-only scripts
+tools/
+avatar-lab/
+scripts/avatar/
+
+# OS / editor / tool state
 .DS_Store
 .remotion/
 out/
