@@ -1,5 +1,5 @@
 # Installed tools, skills & security notes
-_Last updated: 2026-11-13 (strategy change: free & open-source only — see STRATEGY.md). Update this file whenever anything is installed, upgraded or removed._
+_Last updated: 2026-11-14 (cloud/Linux setup — see CLOUD.md; previously 2026-11-13 strategy change: free & open-source only — see STRATEGY.md). Update this file whenever anything is installed, upgraded or removed._
 
 ## System (pre-existing, not modified)
 | Tool | Version | Source |
@@ -18,12 +18,26 @@ Checked: none of these packages declare install/postinstall scripts.
 **Licence note:** Remotion is free for individuals and companies of ≤3 people; larger companies need a paid Remotion company licence.
 
 ## Python (`.venv`, isolated)
-faster-whisper 1.2 (CTranslate2, no torch), **piper-tts 1.8.0** (GPL-3.0 tool; deps onnxruntime + pathvalidate), librosa, numpy, soundfile, opencv-python-headless, scenedetect, Pillow, python-dotenv, requests, pyyaml, jsonschema, pytest. Exact pins: `requirements.lock.txt`.
+faster-whisper 1.2 (CTranslate2, no torch), **piper-tts 1.8.0** (GPL-3.0 tool; deps onnxruntime + pathvalidate — now pinned in both `requirements.txt` and `requirements.lock.txt`), librosa, numpy, soundfile, opencv-python-headless, scenedetect, Pillow, python-dotenv, requests, pyyaml, jsonschema, pytest. Exact pins: `requirements.lock.txt`.
 - `av` pinned `<16` — PyAV 16+ breaks faster-whisper 1.2 (`metadata_errors` kwarg).
 - `pydub` removed — broken on Python 3.13 (no `audioop`).
 - scenedetect pulls `opencv-python`; it was removed in favour of `opencv-python-headless` to avoid duplicate cv2/FFmpeg dylibs.
 - Whisper model `small` cached in `./models/huggingface` (git-ignored, ~464 MB).
 - Piper voices `en_US-ryan-medium`, `en_US-lessac-medium` in `./models/piper` (~63 MB each) from the official rhasspy/piper-voices repo via `piper.download_voices`.
+
+## Cloud sessions (Linux, temporary) — added 2026-11-14
+Claude Code cloud container: Ubuntu 24.04 x86_64, 4 CPU, ~15 GB RAM, no GPU. **Temporary:** every new session is a fresh clone, so `node_modules/`, `.venv/`, `models/` and renders must be recreated — `bash scripts/cloud-setup.sh` (see `docs/CLOUD.md`).
+| Item | Version / source | Notes |
+|---|---|---|
+| System (pre-installed, not modified) | Node 22.23 / npm 10.9, Python 3.13, FFmpeg 6.1.1 (Ubuntu, **has libass/drawtext**), git-lfs, ImageMagick 6, Chrome for Testing in `/opt/pw-browsers` | No sox/Blender/yt-dlp (not needed, not installed) |
+| Node deps | `npm ci` from `package-lock.json` | identical to Mac |
+| Remotion headless Chrome | `npx remotion browser ensure` → `node_modules/.remotion` (from remotion.dev) | |
+| `.venv` | `requirements.lock.txt`, then `opencv-python` (pulled by scenedetect) removed and `opencv-python-headless` force-reinstalled — same as Mac | `pip freeze` == lockfile |
+| Piper voice | **`en_US-ryan-medium` only** (~63 MB, rhasspy/piper-voices via `piper.download_voices`) | `cloud-setup.sh --piper-voice`; no other voices without approval |
+| Whisper small | Systran/faster-whisper-small (~464 MB) | not downloaded at startup; `transcribe.py` downloads once on demand if not cached (`STUDIO_NO_MODEL_DOWNLOAD=1` forbids) |
+| Remotion GL | `swangle` on GPU-less Linux (`remotion.config.ts`) | `angle` and `swiftshader` fail to create WebGL contexts there |
+
+**Fixed lockfile bug (2026-11-14):** `requirements.lock.txt` pinned `av==19.0.2`, contradicting `requirements.txt` (`av<16`). With 19.0.2 every transcription failed (`av.open() got an unexpected keyword argument 'metadata_errors'`), which broke the `transcribe` and `piper-tts` tests on a clean install. The lock now pins `av==15.1.0` (newest <16); both tests pass. `pip check` reports `scenedetect requires opencv-python` — expected, since only the headless build is kept.
 
 ## Claude Code skills — project-scoped (`.claude/skills/`)
 | Skill | Source @ commit | Licence | Review verdict |

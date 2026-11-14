@@ -14,6 +14,7 @@ Independent professional AI video production studio. **Unrelated to any other pr
 ## Commands
 | | |
 |---|---|
+| `bash scripts/cloud-setup.sh [--piper-voice] [--whisper]` | cloud session setup (temporary env — see `docs/CLOUD.md`) |
 | `npm run doctor` | environment health |
 | `npm test` (`FAST=1 npm test`) | full suite incl. renders (~1 min) |
 | `npm run studio` | Remotion Studio preview |

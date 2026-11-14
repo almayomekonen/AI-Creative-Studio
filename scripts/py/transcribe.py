@@ -2,7 +2,9 @@
 """Word-level transcription → Remotion `Caption[]` JSON + SRT + plain transcript.
 
 Runs fully offline with faster-whisper (CTranslate2, int8 on CPU — fine on an 8 GB M1).
-Models download once into ./models/huggingface (git-ignored).
+Models download once into ./models/huggingface (git-ignored) — only when a transcription
+actually needs one and it is not already cached. Set STUDIO_NO_MODEL_DOWNLOAD=1 to forbid
+downloads (fails with a clear message instead).
 
   .venv/bin/python scripts/py/transcribe.py input.wav -o out/captions --model small --lang en
 """
@@ -25,6 +27,25 @@ def fmt_srt(ms: int) -> str:
     return f"{h:02}:{m:02}:{s:02},{ms:03}"
 
 
+MODEL_SIZES = {"tiny": "~75 MB", "base": "~145 MB", "small": "~464 MB", "medium": "~1.5 GB", "large-v3": "~3 GB"}
+
+
+def ensure_model(name: str) -> str:
+    """Return a local model path if cached; otherwise download once (unless forbidden)."""
+    if Path(name).is_dir():  # explicit local model directory
+        return name
+    hub = Path(os.environ["HF_HOME"]) / "hub" / f"models--Systran--faster-whisper-{name}" / "snapshots"
+    cached = next((d for d in hub.glob("*") if (d / "model.bin").exists()), None) if hub.is_dir() else None
+    if cached:
+        return str(cached)
+    if os.environ.get("STUDIO_NO_MODEL_DOWNLOAD") == "1":
+        raise SystemExit(f"Whisper '{name}' is not in {hub.parent.parent} and STUDIO_NO_MODEL_DOWNLOAD=1 — "
+                         f"run once without it to download ({MODEL_SIZES.get(name, 'size unknown')}).")
+    print(f"Whisper '{name}' not cached — downloading once into ./models/huggingface ({MODEL_SIZES.get(name, 'size unknown')}).", file=sys.stderr)
+    from faster_whisper.utils import download_model
+    return download_model(name, cache_dir=str(Path(os.environ["HF_HOME"]) / "hub"))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("input", help="audio or video file")
@@ -36,7 +57,7 @@ def main() -> int:
 
     from faster_whisper import WhisperModel
 
-    model = WhisperModel(args.model, device="cpu", compute_type="int8")
+    model = WhisperModel(ensure_model(args.model), device="cpu", compute_type="int8")
     segments, info = model.transcribe(
         args.input,
         language=args.lang,
