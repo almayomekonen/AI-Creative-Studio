@@ -1,36 +1,70 @@
 # Working from the cloud (Claude Code on the web / iPad)
 
+Routine studio work runs in Claude Code cloud sessions, so an iPad (or any browser) is enough —
+the Mac is only needed for heavy final renders if CPU rendering is too slow.
+
 Cloud sessions run on a temporary Linux container (Ubuntu 24.04, x86_64, 4 CPU, ~15 GB RAM,
 **no GPU**). The repository is cloned fresh at the start of every session.
 
-## ⚠ The environment is temporary
-Everything git-ignored is **lost when the session ends** and must be recreated in a new session:
+## Personal cloud environment: `AI-Creative-Studio`
+A dedicated **personal** environment (not the shared Default environment), linked to
+`almayomekonen/AI-Creative-Studio`. Choose it when starting a session.
 
-| Lost | Recreated by |
-|---|---|
-| `node_modules/` (incl. Remotion's headless Chrome) | `bash scripts/cloud-setup.sh` (automatic if the environment setup script is configured) |
-| `.venv/` | same |
-| `models/piper/en_US-ryan-medium.*` (~63 MB) | `bash scripts/cloud-setup.sh --piper-voice` |
-| `models/huggingface/` Whisper small (~464 MB) | on demand: first `transcribe.py` run, or `bash scripts/cloud-setup.sh --whisper` |
-| renders, `tmp/`, `productions/*/renders/` | re-render. **Commit nothing heavy** — download finished files you want to keep before the session ends. |
-
-Only committed + pushed files survive. Never commit media, models or `.env` (see `.gitignore`).
-
-## Start a new cloud session
-1. Start a session on this repository and work on your feature branch.
-2. If the environment's setup script is configured (it calls `scripts/cloud-setup.sh`), Node and
-   Python deps are already installed (~1 min). Otherwise run `bash scripts/cloud-setup.sh`.
-3. Only if you need voiceover / the Piper test: `bash scripts/cloud-setup.sh --piper-voice`.
-4. `npm run doctor`, then `FAST=1 npm test` (≈1 min) or `npm test` (≈5 min, includes renders).
-   Without the Piper voice, the `piper-tts` and `transcribe` tests fail with a clear message.
-
-Environment setup script (Claude Code environment settings → Setup script), runs from the
-directory that holds the checkout:
+**Setup script** (runs as root before Claude starts, from the directory that holds the checkout):
 ```bash
-if [ -d AI-Creative-Studio ]; then (cd AI-Creative-Studio && bash scripts/cloud-setup.sh); fi
+if [ -f AI-Creative-Studio/scripts/cloud-setup.sh ]; then
+  (cd AI-Creative-Studio && bash scripts/cloud-setup.sh --piper-voice)
+else
+  echo "cloud-setup.sh not on this branch - skipping studio setup"
+fi
 ```
-It installs dependencies only — no models — so session start stays fast and no large download
-happens unless a task needs it.
+It runs `scripts/cloud-setup.sh --piper-voice`: `npm ci`, Remotion's headless Chrome, the
+project `.venv` from `requirements.lock.txt`, and the Piper voice `en_US-ryan-medium`.
+Cold run ≈ 1 min. **Whisper is not downloaded at setup** — `transcribe.py` fetches Whisper small
+(~464 MB, once per session) the first time a transcription needs it.
+
+**Network (limited allowlist).** Package registries (npm, PyPI, …) and MCP servers are allowed,
+plus exactly these hosts:
+
+| Host | Used for |
+|---|---|
+| `remotion.media`, `storage.googleapis.com` | Remotion's headless Chrome download |
+| `huggingface.co`, `us.aws.cdn.hf.co`, `cdn-lfs.hf.co`, `cas-bridge.xethub.hf.co`, `cas-server.xethub.hf.co`, `transfer.xethub.hf.co` | Piper voice and on-demand Whisper downloads |
+| `fonts.googleapis.com`, `fonts.gstatic.com` | `@remotion/google-fonts` at render time |
+
+Everything else is blocked. If a task needs another host, it is added to the environment's
+allowlist (approved by the owner) — never worked around. No API keys or secrets are stored on
+the environment; the studio needs none.
+
+## Branch behaviour
+The setup script only installs anything if the session's checkout contains
+`scripts/cloud-setup.sh`. A session on a branch without it starts normally but **skips** the
+studio setup — run `bash scripts/cloud-setup.sh --piper-voice` by hand there, or work from a
+branch that has it (all branches created from `main` once the cloud-setup PR is merged).
+
+## ⚠ Storage is temporary
+Everything git-ignored is **lost when the session ends** and is recreated in the next one:
+
+| Lost at session end | Recreated by |
+|---|---|
+| `node_modules/` (incl. Remotion's headless Chrome) | environment setup script (automatic) |
+| `.venv/` | environment setup script (automatic) |
+| `models/piper/en_US-ryan-medium.*` (~63 MB) | environment setup script (automatic) |
+| `models/huggingface/` Whisper small (~464 MB) | first `transcribe.py` run (on demand), or `bash scripts/cloud-setup.sh --whisper` |
+| renders, `tmp/`, `productions/*/renders/` | re-render. **Download finished files you want to keep before the session ends.** |
+| commits that were not pushed | nothing — **push before you leave** |
+
+What persists: everything committed **and pushed**, and the environment's own settings.
+Never commit media, models, `.venv`, `node_modules` or `.env` (enforced by `.gitignore`).
+
+## Start a new session (iPad)
+1. New session in Claude Code on the web → environment **AI-Creative-Studio** → repository
+   `almayomekonen/AI-Creative-Studio` → a branch that contains `scripts/cloud-setup.sh`.
+2. Setup runs automatically (~1 min). Then `npm run doctor`.
+3. `FAST=1 npm test` (≈1 min) or `npm test` (≈5 min, includes renders).
+4. Without the environment (e.g. Default), run `bash scripts/cloud-setup.sh --piper-voice` first.
+
+`bash scripts/cloud-setup.sh --check` reports what is installed without changing anything.
 
 ## Linux differences handled in code
 - **Software WebGL:** with no GPU, Chrome's `angle` renderer cannot create a WebGL context.
